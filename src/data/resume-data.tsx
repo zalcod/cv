@@ -136,7 +136,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Shipxy",
+      title: "Shipixy",
       techStack: ["Webflow"],
       description: "A website for a shipping company. Developed most of the components with Webflow. Webflow's CRM and e-mail infrastructure was integrated.",
       logo: "", // Add the appropriate logo URL if available
