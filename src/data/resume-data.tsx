@@ -26,7 +26,7 @@ export const RESUME_DATA = {
   locationLink: "https://www.google.com/maps/place/Bursa",
   about: "A Mobile App developer with a passion for software.",
   summary: "This is Zal. I'm a Software Developer with over 2 years of experience in software development. I hold a Bachelor's degree in Computer Engineering. I've been developing applications for Android and iOS platforms using Flutter since 2021 and making a living out of Flutter development. I started my professional career while still a student and continue to actively engage in development projects. Throughout my career, I have participated in numerous projects both voluntarily and professionally.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
+  avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=e87faf52f7e267b08c937f01b1e5f16da85ca6ff&v=4",
   personalWebsiteUrl: "https://zalsolmus.com",
   contact: {
     email: "zalsolmus@gmail.com",
