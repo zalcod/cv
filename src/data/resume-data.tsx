@@ -1,22 +1,4 @@
-import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
-} from "@/images/logos";
+import { SleepyLogo } from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
@@ -90,7 +72,7 @@ export const RESUME_DATA = {
     },
     {
       company: "Gorsentam Agriculture Technologies",
-      link: "", // Add the appropriate link if available
+      link: "https://gorsentam.com", // Add the appropriate link if available
       badges: ["Remote"],
       title: "Flutter Developer Intern",
       logo: "", // Add the appropriate logo URL if available
@@ -116,10 +98,21 @@ export const RESUME_DATA = {
       techStack: ["Flutter", "Dart"],
       description:
         "A mobile app providing white noise sounds for babies to help them sleep.",
+      logo: SleepyLogo,
+      link: {
+        label: "play.google.com",
+        href: "https://play.google.com/store/apps/details?id=com.sleepy.baby",
+      },
+    },
+    {
+      title: "Sufi Sound: White Noise",
+      techStack: ["Flutter", "Dart"],
+      description:
+        "A mobile app providing white noise sounds for adults to help them relax.",
       logo: "", // Add the appropriate logo URL if available
       link: {
         label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=com.fabrikod.whitesound&hl=en_CA&gl=US",
+        href: "https://play.google.com/store/apps/details?id=com.fabrikod.sufisound",
       },
     },
     {
@@ -140,6 +133,16 @@ export const RESUME_DATA = {
       link: {
         label: "play.google.com",
         href: "https://play.google.com/store/apps/details?id=com.fabrikod.kinderway&hl=en_CA&gl=US",
+      },
+    },
+    {
+      title: "Shipxy",
+      techStack: ["Webflow"],
+      description: "A website for a shipping company. Developed most of the components with Webflow. Webflow's CRM and e-mail infrastructure was integrated.",
+      logo: "", // Add the appropriate logo URL if available
+      link: {
+        label: "shipixy.com",
+        href: "https://www.shipixy.com",
       },
     },
   ],

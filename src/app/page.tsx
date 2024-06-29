@@ -172,7 +172,6 @@ export default function Page() {
             })}
           </div>
         </Section>
-
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
@@ -188,6 +187,31 @@ export default function Page() {
               );
             })}
           </div>
+        </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Extracurricular Activities</h2>
+          {RESUME_DATA.extracurricularActivities.map((activity) => {
+            return (
+              <Card key={activity.role}>
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-x-2 text-base">
+                    <h3 className="font-semibold leading-none">
+                      {activity.role}
+                    </h3>
+                    <div className="text-sm tabular-nums text-gray-500">
+                      {activity.start} - {activity.end}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-2 print:text-[12px]">
+                  {activity.organization}
+                </CardContent>
+                <CardContent className="mt-2 text-xs print:text-[10px]">
+                  {activity.description}
+                </CardContent>
+              </Card>
+            );
+          })}
         </Section>
       </section>
 
