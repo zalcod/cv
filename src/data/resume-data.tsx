@@ -42,11 +42,11 @@ export const RESUME_DATA = {
         url: "https://www.linkedin.com/in/zalcod/",
         icon: LinkedInIcon,
       },
-      {
+      /* {
         name: "X",
         url: "https://x.com/zalcod",
         icon: XIcon,
-      },
+      }, */
     ],
   },
   education: [
