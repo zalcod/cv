@@ -76,8 +76,8 @@ export const RESUME_DATA = {
       badges: ["Remote"],
       title: "Flutter Developer Intern",
       logo: "", // Add the appropriate logo URL if available
-      start: "August 2022",
-      end: "January 2023",
+      start: "June 2022",
+      end: "August 2023",
       description:
         "Developed a mobile application focused on agricultural technologies using Flutter. Gained proficiency in Dart and worked on UI/UX design and mobile app development.",
     },
@@ -105,14 +105,14 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Sufi Sound: White Noise",
+      title: "White Sound",
       techStack: ["Flutter", "Dart"],
       description:
         "A mobile app providing white noise sounds for adults to help them relax.",
-      logo: "", // Add the appropriate logo URL if available
+      logo: "", 
       link: {
         label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=com.fabrikod.sufisound",
+        href: "https://play.google.com/store/apps/details?id=com.fabrikod.whitesound&pcampaignid=web_share",
       },
     },
     {
