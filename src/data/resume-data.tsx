@@ -1,5 +1,5 @@
 import { SleepyLogo } from "@/images/logos";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { BlueskyIcon, GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
   name: "Zal Solmuş",
@@ -29,6 +29,11 @@ export const RESUME_DATA = {
         url: "https://x.com/zalcod",
         icon: XIcon,
       }, */
+      {
+        name: "Bluesky",
+        url: "https://bsky.app/profile/zalsolmus.com",
+        icon: BlueskyIcon,
+      },
     ],
   },
   education: [
