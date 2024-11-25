@@ -29,6 +29,7 @@ export const RESUME_DATA = {
         url: "https://x.com/zalcod",
         icon: XIcon,
       }, */
+      /* Bluesky */
       {
         name: "Bluesky",
         url: "https://bsky.app/profile/zalsolmus.com",
