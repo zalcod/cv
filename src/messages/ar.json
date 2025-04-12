@@ -1,0 +1,59 @@
+{
+    "navigation": {
+        "home": "الرئيسية",
+        "cv": "السيرة الذاتية",
+        "blog": "المدونة",
+        "contact": "اتصل بنا",
+        "readMore": "اقرأ المزيد"
+    },
+    "theme": {
+        "light": "فاتح",
+        "dark": "داكن",
+        "system": "النظام"
+    },
+    "sections": {
+        "about": "عني",
+        "workExperience": "الخبرة العملية",
+        "education": "التعليم",
+        "projects": "المشاريع",
+        "skills": "المهارات",
+        "extracurricular": "الأنشطة اللامنهجية",
+        "languages": "اللغات",
+        "blog": "المدونة"
+    },
+    "common": {
+        "view": "عرض",
+        "present": "حاليًا",
+        "location": "الموقع",
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "social": "وسائل التواصل الاجتماعي"
+    },
+    "cv": {
+        "print": "طباعة",
+        "download": "تحميل",
+        "skills": "المهارات",
+        "technologies": "التقنيات",
+        "responsibilities": "المسؤوليات",
+        "achievements": "الإنجازات"
+    },
+    "commands": {
+        "title": "قائمة الأوامر",
+        "search": "البحث عن أمر...",
+        "noResults": "لم يتم العثور على نتائج",
+        "actions": "الإجراءات",
+        "downloadCV": "تحميل السيرة الذاتية",
+        "printCV": "طباعة السيرة الذاتية",
+        "links": "الروابط",
+        "press": "اضغط",
+        "toOpen": "لفتح قائمة الأوامر"
+    },
+    "shortcuts": {
+        "toSearch": "للبحث",
+        "tapSearchIcon": "انقر على أيقونة البحث للبحث"
+    },
+    "footer": {
+        "allRightsReserved": "جميع الحقوق محفوظة",
+        "secure": "آمن"
+    }
+}

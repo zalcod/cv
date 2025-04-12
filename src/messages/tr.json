@@ -1,0 +1,59 @@
+{
+    "navigation": {
+        "home": "Ana Sayfa",
+        "cv": "CV",
+        "blog": "Blog",
+        "contact": "İletişim",
+        "readMore": "Daha Fazla"
+    },
+    "theme": {
+        "light": "Açık",
+        "dark": "Koyu",
+        "system": "Sistem"
+    },
+    "sections": {
+        "about": "Hakkımda",
+        "workExperience": "İş Deneyimi",
+        "education": "Eğitim",
+        "projects": "Projeler",
+        "skills": "Yetenekler",
+        "extracurricular": "Ders Dışı Aktiviteler",
+        "languages": "Diller",
+        "blog": "Blog"
+    },
+    "common": {
+        "view": "Görüntüle",
+        "present": "Şu an",
+        "location": "Konum",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "social": "Sosyal Medya"
+    },
+    "cv": {
+        "print": "Yazdır",
+        "download": "İndir",
+        "skills": "Yetenekler",
+        "technologies": "Teknolojiler",
+        "responsibilities": "Sorumluluklar",
+        "achievements": "Başarılar"
+    },
+    "commands": {
+        "title": "Komut Menüsü",
+        "search": "Komut ara...",
+        "noResults": "Sonuç bulunamadı",
+        "actions": "İşlemler",
+        "downloadCV": "CV'yi İndir",
+        "printCV": "CV'yi Yazdır",
+        "links": "Bağlantılar",
+        "press": "Komut menüsünü açmak için",
+        "toOpen": "tuşuna basın"
+    },
+    "shortcuts": {
+        "toSearch": "arama yapmak için",
+        "tapSearchIcon": "Arama için ikona basın"
+    },
+    "footer": {
+        "allRightsReserved": "Tüm hakları saklıdır",
+        "secure": "Güvenli"
+    }
+}

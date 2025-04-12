@@ -1,6 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { CommandIcon, Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
   CommandDialog,
@@ -11,60 +15,113 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { Button } from "./ui/button";
-import { CommandIcon } from "lucide-react";
 
 interface Props {
   links: { url: string; title: string }[];
 }
 
-export const CommandMenu = ({ links }: Props) => {
-  const [open, setOpen] = React.useState(false);
+export function CommandMenu({ links }: Props) {
+  const t = useTranslations();
+  const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isWindows, setIsWindows] = useState(false);
 
-  React.useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen((open) => !open);
-      }
-    };
+  useEffect(() => {
+    // Check if user is on mobile
+    setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, []);
+    // Check if user is on Windows
+    setIsWindows(navigator.platform.indexOf('Win') > -1);
+
+    // Add keyboard shortcut only for desktop devices
+    if (!isMobile) {
+      const down = (e: KeyboardEvent) => {
+        // Windows: Ctrl+J, macOS: Command+J
+        if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }
+      };
+
+      document.addEventListener("keydown", down);
+      return () => document.removeEventListener("keydown", down);
+    }
+  }, [isMobile]);
+
+  // Mobile Search Button Component
+  const MobileSearchButton = () => {
+    if (!isMobile) return null;
+
+    return (
+      <Button
+        variant="ghost"
+        size="icon"
+        className="fixed top-4 right-4 rounded-full bg-gradient-to-br from-primary to-primary-foreground text-white"
+        onClick={() => setOpen(true)}
+      >
+        <Search className="h-5 w-5" />
+        <span className="sr-only">Search</span>
+      </Button>
+    );
+  };
+
+  // Shortcut Key Display Component
+  const ShortcutKey = () => {
+    if (isMobile) return null;
+
+    if (isWindows) {
+      return (
+        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <span className="text-xs">Ctrl</span>+J
+        </kbd>
+      );
+    }
+
+    return (
+      <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        <span className="text-xs">⌘</span>J
+      </kbd>
+    );
+  };
 
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block">
-        Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-xs">⌘</span>J
-        </kbd>{" "}
-        to open the command menu
-      </p>
+      <MobileSearchButton />
+      {/* Rest of your dialog component */}
+      {!isMobile && (
+        <div className="fixed bottom-4 right-4 text-sm text-muted-foreground">
+          {t('commands.press')} <ShortcutKey /> {t('commands.toOpen')}
+        </div>
+      )}
+
       <Button
         onClick={() => setOpen((open) => !open)}
         variant="outline"
         size="icon"
-        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
+        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl bg-gradient-to-br from-primary/50 to-primary-foreground/50 print:hidden"
       >
-        <CommandIcon className="my-6 size-6" />
+        {isMobile ? (
+          <Search className="my-6 size-6" />
+        ) : (
+          <CommandIcon className="my-6 size-6" />
+        )}
       </Button>
+
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Komut yazın veya arayın..." />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Actions">
+          <CommandEmpty>Sonuç bulunamadı.</CommandEmpty>
+          <CommandGroup heading="İşlemler">
             <CommandItem
               onSelect={() => {
                 setOpen(false);
                 window.print();
               }}
             >
-              <span>Print</span>
+              <span>Yazdır</span>
             </CommandItem>
           </CommandGroup>
-          <CommandGroup heading="Links">
+          <CommandGroup heading="Bağlantılar">
             {links.map(({ url, title }) => (
               <CommandItem
                 key={url}
@@ -82,4 +139,4 @@ export const CommandMenu = ({ links }: Props) => {
       </CommandDialog>
     </>
   );
-};
+}

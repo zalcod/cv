@@ -1,0 +1,59 @@
+{
+    "navigation": {
+        "home": "Home",
+        "cv": "CV",
+        "blog": "Blog",
+        "contact": "Contact",
+        "readMore": "Read More"
+    },
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "sections": {
+        "about": "About",
+        "workExperience": "Work Experience",
+        "education": "Education",
+        "projects": "Projects",
+        "skills": "Skills",
+        "extracurricular": "Extracurricular Activities",
+        "languages": "Languages",
+        "blog": "Blog"
+    },
+    "common": {
+        "view": "View",
+        "present": "Present",
+        "location": "Location",
+        "email": "Email",
+        "phone": "Phone",
+        "social": "Social Media"
+    },
+    "cv": {
+        "print": "Print",
+        "download": "Download",
+        "skills": "Skills",
+        "technologies": "Technologies",
+        "responsibilities": "Responsibilities",
+        "achievements": "Achievements"
+    },
+    "commands": {
+        "title": "Command Menu",
+        "search": "Search command...",
+        "noResults": "No results found",
+        "actions": "Actions",
+        "downloadCV": "Download CV",
+        "printCV": "Print CV",
+        "links": "Links",
+        "press": "Press",
+        "toOpen": "to open command menu"
+    },
+    "shortcuts": {
+        "toSearch": "to search",
+        "tapSearchIcon": "Tap search icon to search"
+    },
+    "footer": {
+        "allRightsReserved": "All rights reserved",
+        "secure": "Secure"
+    }
+}
