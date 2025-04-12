@@ -23,31 +23,35 @@ export default function CVPage() {
     const [isMac, setIsMac] = useState(true);
 
     useEffect(() => {
-        setMounted(true);
-        // Mobil olup olmadığını kontrol et
-        setIsMobile(window.innerWidth < 640);
-        // İşletim sistemi kontrolü
-        setIsMac(navigator.userAgent.indexOf('Mac') !== -1);
-
-        const handleResize = () => {
+        if (typeof window !== 'undefined') {
+            setMounted(true);
+            // Mobil olup olmadığını kontrol et
             setIsMobile(window.innerWidth < 640);
-        };
+            // İşletim sistemi kontrolü
+            setIsMac(navigator.userAgent.indexOf('Mac') !== -1);
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+            const handleResize = () => {
+                setIsMobile(window.innerWidth < 640);
+            };
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
     }, []);
 
     useEffect(() => {
-        // Command+J veya Ctrl+J tuş kombinasyonu için olay dinleyicisi ekleme
-        const handleKeyDown = (event: KeyboardEvent) => {
-            if ((event.metaKey || event.ctrlKey) && event.key === 'j') {
-                event.preventDefault();
-                document.getElementById('command-menu-trigger')?.click();
-            }
-        };
+        if (typeof window !== 'undefined') {
+            // Command+J veya Ctrl+J tuş kombinasyonu için olay dinleyicisi ekleme
+            const handleKeyDown = (event: KeyboardEvent) => {
+                if ((event.metaKey || event.ctrlKey) && event.key === 'j') {
+                    event.preventDefault();
+                    document.getElementById('command-menu-trigger')?.click();
+                }
+            };
 
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
+            window.addEventListener('keydown', handleKeyDown);
+            return () => window.removeEventListener('keydown', handleKeyDown);
+        }
     }, []);
 
     const getResumeData = () => {
