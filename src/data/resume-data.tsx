@@ -1,5 +1,6 @@
 import { SleepyLogo } from "@/images/logos";
-import { BlueskyIcon, GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { BlueskyIcon, GitHubIcon, LinkedInIcon, SubstackIcon, XIcon } from "../components/icons";
+import { icons } from "lucide-react";
 
 export const RESUME_DATA = {
   name: "Zal Solmuş",
@@ -35,6 +36,11 @@ export const RESUME_DATA = {
         url: "https://bsky.app/profile/zalsolmus.com",
         icon: BlueskyIcon,
       },
+      {
+        name: "Substack",
+        url: "https://zalsolmus.substack.com",
+        icon: SubstackIcon,
+      }
     ],
   },
   education: [
@@ -211,4 +217,11 @@ export const RESUME_DATA = {
     },
   ],
   languages: ["English", "Turkish"],
+  blogPosts: [
+    {
+      title: "Substack Blog",
+      description: "Yazılım geliştirme, teknoloji ve kişisel deneyimlerim hakkında yazılarımı paylaştığım blog.",
+      url: "https://zalsolmus.substack.com",
+    }
+  ],
 } as const;

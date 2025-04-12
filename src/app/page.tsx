@@ -93,6 +93,27 @@ export default function Page() {
           </Avatar>
         </div>
         <Section>
+          <h2 className="text-xl font-bold">Personal Blog</h2>
+          {RESUME_DATA.blogPosts.map((post) => {
+            return (
+              <Card key={post.title}>
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-x-2 text-base">
+                    <h3 className="font-semibold leading-none">
+                      <a className="hover:underline" href={post.url} target="_blank" rel="noopener noreferrer">
+                        {post.title}
+                      </a>
+                    </h3>
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-2 text-xs print:text-[10px]">
+                  {post.description}
+                </CardContent>
+              </Card>
+            );
+          })}
+        </Section>
+        <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
             {RESUME_DATA.summary}
@@ -213,6 +234,7 @@ export default function Page() {
             );
           })}
         </Section>
+
       </section>
 
       <CommandMenu
