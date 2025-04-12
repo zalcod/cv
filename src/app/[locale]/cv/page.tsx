@@ -39,21 +39,6 @@ export default function CVPage() {
         }
     }, []);
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            // Command+J veya Ctrl+J tuş kombinasyonu için olay dinleyicisi ekleme
-            const handleKeyDown = (event: KeyboardEvent) => {
-                if ((event.metaKey || event.ctrlKey) && event.key === 'j') {
-                    event.preventDefault();
-                    document.getElementById('command-menu-trigger')?.click();
-                }
-            };
-
-            window.addEventListener('keydown', handleKeyDown);
-            return () => window.removeEventListener('keydown', handleKeyDown);
-        }
-    }, []);
-
     const getResumeData = () => {
         switch (locale) {
             case 'en':
@@ -79,8 +64,6 @@ export default function CVPage() {
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
             <div className="mx-auto w-full max-w-2xl space-y-8 bg-background dark:bg-background px-8 py-8 print:space-y-6 print:py-6 print:px-6 print:bg-white print:text-black">
-                <CommandMenu resumeData={resumeData} />
-
                 <div className="flex items-center justify-between print:hidden">
                     <Link href="/">
                         <Button
@@ -92,8 +75,7 @@ export default function CVPage() {
                             {t('navigation.home')}
                         </Button>
                     </Link>
-
-
+                    <CommandMenu resumeData={resumeData} />
                 </div>
 
                 {/* Profile photo and name at the top - left aligned */}
