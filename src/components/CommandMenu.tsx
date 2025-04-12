@@ -18,9 +18,9 @@ import {
     CommandSeparator,
 } from "@/components/ui/command";
 import { Download, FileText, Link as LinkIcon } from "lucide-react";
-import html2pdf from 'html2pdf.js';
 import { ResumeData } from "@/data/resume-data";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 interface CommandMenuProps {
     resumeData: ResumeData;
@@ -28,14 +28,25 @@ interface CommandMenuProps {
 
 export function CommandMenu({ resumeData }: CommandMenuProps) {
     const t = useTranslations();
+    const [html2pdf, setHtml2pdf] = useState<any>(null);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            import('html2pdf.js').then((module) => {
+                setHtml2pdf(module.default);
+            });
+        }
+    }, []);
 
     const downloadPDF = () => {
+        if (!html2pdf) return;
+
         const element = document.querySelector('main');
         if (!element) return;
 
         // Enhanced PDF settings
         const opt = {
-            margin: [15, 15, 15, 15], // Margin: [top, right, bottom, left]
+            margin: [15, 15, 15, 15],
             filename: `${resumeData.name} - CV.pdf`,
             image: { type: 'jpeg', quality: 1.0 },
             html2canvas: {
@@ -57,7 +68,9 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
     };
 
     const openLink = (url: string) => {
-        window.open(url, '_blank');
+        if (typeof window !== 'undefined') {
+            window.open(url, '_blank');
+        }
     };
 
     return (
@@ -85,7 +98,7 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
                                 <Download className="mr-2 h-4 w-4" />
                                 <span>{t('commands.downloadCV')}</span>
                             </CommandItem>
-                            <CommandItem onSelect={() => window.print()}>
+                            <CommandItem onSelect={() => typeof window !== 'undefined' && window.print()}>
                                 <FileText className="mr-2 h-4 w-4" />
                                 <span>{t('commands.printCV')}</span>
                             </CommandItem>
