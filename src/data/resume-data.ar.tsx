@@ -7,7 +7,8 @@ export const RESUME_DATA_AR = {
     location: "تركيا",
     locationLink: "https://www.google.com/maps/place/Bursa",
     about: "مطور تطبيقات جوال شغوف بالبرمجيات.",
-    summary: "أنا زال. أنا مطور برمجيات مع خبرة تزيد عن عامين في تطوير البرمجيات. حاصل على درجة البكالوريوس في هندسة الكمبيوتر. أقوم بتطوير تطبيقات لمنصات Android و iOS باستخدام Flutter منذ عام 2021 وأعيش من تطوير Flutter. بدأت مسيرتي المهنية وأنا ما زلت طالباً وأواصل المشاركة بنشاط في مشاريع التطوير. طوال مسيرتي المهنية، شاركت في العديد من المشاريع طوعياً ومهنياً.",
+    summary:
+        "أدمج تطوير البرمجيات مع استراتيجيات العمل. أواصل مسيرتي المهنية التي بدأت بتطوير تطبيقات الهاتف المحمول والويب والتطبيقات المولدة بالذكاء الاصطناعي، بالتركيز الآن على التحول الرقمي وتحسين العمليات التجارية. أقوم بتحديث البنى التحتية الرقمية وقواعد البيانات والعمليات التشغيلية للشركات من البداية إلى النهاية. أعمل على ضمان سير عمليات تكنولوجيا المعلومات وتدفق المعلومات بشكل سليم. أنا لا أكتب التعليمات البرمجية فحسب، بل أقوم ببناء أنظمة مستدامة تساهم في نمو الأعمال.",
     avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
     personalWebsiteUrl: "https://zalsolmus.com",
     contact: {
@@ -110,6 +111,26 @@ export const RESUME_DATA_AR = {
     ],
     projects: [
         {
+            title: "فالكون للدراجات النارية - موقع الكتروني",
+            techStack: ["PHP"],
+            description: "موقع ويب للشركة تم تطويره لعلامة فالكون للدراجات النارية التجارية.",
+            logo: "",
+            link: {
+                label: "falconmotosiklet.com",
+                href: "https://www.falconmotosiklet.com",
+            },
+        },
+        {
+            title: "Evital AI",
+            techStack: ["Flutter (Web)"],
+            description: "قمت بتطوير واجهة لروبوت دردشة مدعوم بالذكاء الاصطناعي في قطاع الرعاية الصحية. إنه تطبيق ويب تم بناؤه باستخدام Flutter.",
+            logo: "",
+            link: {
+                label: "ai.evital.com.tr",
+                href: "https://ai.evital.com.tr",
+            },
+        },
+        {
             title: "إيفيتال - خدمة صحية عبر الإنترنت",
             techStack: ["Flutter", "Dart"],
             description:
@@ -172,8 +193,17 @@ export const RESUME_DATA_AR = {
                 href: "https://www.shipixy.com",
             },
         },
+
     ],
     extracurricularActivities: [
+        {
+            role: "عضو",
+            organization: "KHS (Konya Hackerspace)",
+            start: "سبتمبر 2025",
+            end: "حالياً",
+            description:
+                "كونيا هاكرسبيس هو المكان الذي يبدع فيه الهاكرز المحليون أشياء رائعة. يدعم كونيا هاكرسبيس ثقافة الهاكرز، ويجمع بين المصنعين والمخترعين، ويساعد في نشر المعرفة التقنية.",
+        },
         {
             role: "متدرب",
             organization: "Game & App Academy (Google و T3)",

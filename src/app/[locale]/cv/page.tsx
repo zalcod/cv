@@ -96,7 +96,7 @@ export default function CVPage() {
                     <Section className="flex flex-col items-start gap-4">
                         <h2 className="text-2xl font-bold w-full">{t('sections.about')}</h2>
                         <div className="prose dark:prose-invert w-full">
-                            <p>{resumeData.summary}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{resumeData.summary}</p>
                             <p className="flex items-center text-sm text-muted-foreground mt-2">
                                 <MapPin className="h-4 w-4 mr-1" />
                                 <span>{resumeData.location}</span>

@@ -6,8 +6,9 @@ export const RESUME_DATA_TR = {
     initials: "ZS",
     location: "Türkiye",
     locationLink: "https://www.google.com/maps/place/Bursa",
-    about: "Mobil Uygulama Geliştirici",
-    summary: "Ben Zal. 2 yıldan fazla yazılım geliştirme deneyimine sahip bir Yazılım Geliştiricisiyim. Bilgisayar Mühendisliği lisans derecesine sahibim. 2021'den beri Flutter kullanarak Android ve iOS platformları için uygulamalar geliştiriyorum ve Flutter geliştirme ile geçimimi sağlıyorum. Profesyonel kariyerime öğrenciyken başladım ve hala aktif olarak geliştirme projelerinde yer alıyorum. Kariyerim boyunca hem gönüllü hem de profesyonel olarak birçok projede yer aldım.",
+    about: "Yazılım Geliştirici | Dijital Dönüşüm",
+    summary:
+        "Yazılım geliştirmeyi, iş stratejileriyle birleştiriyorum. Mobil, Web, AI Generated uygulama geliştirme kökenli teknik geçmişimi, dijital dönüşüm ve iş süreçlerini geliştirme ile devam ettiriyorum. Şirketlerin dijital altyapılarını, veritabanı ve operasyonel süreçlerini uçtan uca modernize ediyorum. Bilgi işlem operasyonları ve bilgi akışının sağlıklı şekilde yürütülmesi üstüne çalışıyorum. Sadece kod yazan değil, iş büyüten sürdürülebilir sistemler kuruyorum.",
     avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
     personalWebsiteUrl: "https://zalsolmus.com",
     contact: {
@@ -54,13 +55,24 @@ export const RESUME_DATA_TR = {
     ],
     work: [
         {
+            company: "Kolat Group",
+            link: "https://kolatmotor.com.tr",
+            badges: ["Yerinde"],
+            title: "Dijital ve Operasyonel Süreçler Lideri",
+            logo: "",
+            start: "Ağustos 2025",
+            end: "Şu an",
+            description:
+                "Otomotiv, İnşaat ve Plastik sektörlerinde faaliyet gösteren holding bünyesindeki 6 farklı markanın (Falcon, TOGO, vb.) uçtan uca dijital ve ticari dönüşümünü yönetiyorum. Sorumluluklarım teknik altyapıdan sahadaki satışa kadar geniş bir yelpazeyi kapsıyor. Bayi yönetim panellerinin ve mobil uygulamaların mimarisini tasarlayıp geliştirdim (Flutter & Web). Üretimde ERP ve veritabanı entegrasyonlarını sağlayarak veri akışını optimize ettim. Şirket içi hiyerarşik yapıyı ve bilgi işlem süreçlerini yeniden kurguladım. Perakende satış danışmanlığı yaparak bayilerin satış performansını artıracak dijital sistemler kurdum. Tüm grup markalarının kurumsal kimlik inşasını ve sosyal medya stratejilerini yöneterek bütünleşik bir marka dili oluşturdum.",
+        },
+        {
             company: "Eczacibasi Evital",
             link: "https://evital.com.tr/",
             badges: ["Hibrit"],
             title: "Mobil Uygulama Geliştirici",
             logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
             start: "Ağustos 2024",
-            end: "Şu an",
+            end: "Ağustos 2025",
             description:
                 "Şirketin ürün ve hizmetleri için mobil uygulamalar geliştirdim. Binlerce kullanıcı tarafından kullanılan 'Evital' mobil uygulamasının geliştirilmesinde çalıştım. UI/UX tasarımı, durum yönetimi ve API entegrasyonu dahil olmak üzere mobil uygulama geliştirme yaşam döngüsünün tamamında yer aldım.",
         },
@@ -99,6 +111,14 @@ export const RESUME_DATA_TR = {
         },
     ],
     skills: [
+        "Dijital Dönüşüm",
+        "ERP Süreçleri",
+        "İş Analizi",
+        "Süreç Tasarımı",
+        "Bayi / Kanal Yönetimi",
+        "Veri Analizi",
+        "Kurumsal Kimlik",
+        "Sosyal Medya Operasyonları",
         "Flutter",
         "Liderlik",
         "Temiz Kod",
@@ -109,6 +129,16 @@ export const RESUME_DATA_TR = {
         "Dart",
     ],
     projects: [
+        {
+            title: "Evital AI",
+            techStack: ["Flutter (Web)"],
+            description: "Sağlık alanında hizmet veren yapay zeka destekli chatbot arayüzünü geliştirdim. Flutter ile geliştirilmiş bir web uygulamasıdır.",
+            logo: "",
+            link: {
+                label: "ai.evital.com.tr",
+                href: "https://ai.evital.com.tr",
+            },
+        },
         {
             title: "evital - Online Sağlık Hizmeti",
             techStack: ["Flutter", "Dart"],
@@ -171,9 +201,17 @@ export const RESUME_DATA_TR = {
                 label: "shipixy.com",
                 href: "https://www.shipixy.com",
             },
-        },
+        }
     ],
     extracurricularActivities: [
+        {
+            role: "Üye",
+            organization: "KHS (Konya Hackerspace)",
+            start: "Eylül 2025",
+            end: "Şu an",
+            description:
+                "Konya Hackerspace, yerel hackerların harika şeyler ürettiği bir yerdir. Konya Hackerspace hacker kültürünü destekler, üreticileri ve mucitleri bir araya getirir ve teknik bilginin yayılmasına yardımcı olur.",
+        },
         {
             role: "Eğitmen",
             organization: "Game & App Academy (Google ve T3)",
@@ -215,4 +253,4 @@ export const RESUME_DATA_TR = {
             url: "https://zalsolmus.substack.com",
         }
     ],
-} as const; 
+} as const;

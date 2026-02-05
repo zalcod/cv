@@ -14,7 +14,7 @@ import { BlogPosts } from "@/components/blog-posts";
 
 export default function Home() {
   return (
-    <motion.main 
+    <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -30,8 +30,9 @@ export default function Home() {
           </Avatar>
           <div className="flex flex-col items-center text-center">
             <h1 className="text-3xl font-bold">{RESUME_DATA.name}</h1>
+            <p className="text-xl text-muted-foreground mt-2">{RESUME_DATA.about}</p>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground mt-2">
-              {RESUME_DATA.about}
+              {RESUME_DATA.summary}
             </p>
             <div className="flex items-center mt-2">
               <GlobeIcon className="mr-1 size-3" />
@@ -51,7 +52,7 @@ export default function Home() {
           <SocialLinks social={RESUME_DATA.contact.social} />
           <BlogPosts blogPosts={RESUME_DATA.blogPosts} />
         </div>
-        
+
         <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
           <Link href="/cv">
             <Button className="flex items-center gap-2">

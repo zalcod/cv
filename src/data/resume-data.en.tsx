@@ -7,7 +7,8 @@ export const RESUME_DATA_EN = {
     location: "Turkey",
     locationLink: "https://www.google.com/maps/place/Bursa",
     about: "A Mobile App developer with a passion for software.",
-    summary: "This is Zal. I'm a Software Developer with over 2 years of experience in software development. I hold a Bachelor's degree in Computer Engineering. I've been developing applications for Android and iOS platforms using Flutter since 2021 and making a living out of Flutter development. I started my professional career while still a student and continue to actively engage in development projects. Throughout my career, I have participated in numerous projects both voluntarily and professionally.",
+    summary:
+        "I combine software development with business strategy. Building on my technical background in Mobile, Web, and AI-Generated application development, I now focus on digital transformation and business process improvement. I modernize companies' digital infrastructures, databases, and operational workflows end-to-end. I ensure the healthy execution of IT operations and information flow. I don't just write code; I build sustainable systems that grow businesses.",
     avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
     personalWebsiteUrl: "https://zalsolmus.com",
     contact: {
@@ -110,6 +111,26 @@ export const RESUME_DATA_EN = {
     ],
     projects: [
         {
+            title: "Falcon Motorcycle - Website",
+            techStack: ["PHP"],
+            description: "Corporate website developed for the Falcon Motorcycle brand.",
+            logo: "",
+            link: {
+                label: "falconmotosiklet.com",
+                href: "https://www.falconmotosiklet.com",
+            },
+        },
+        {
+            title: "Evital AI",
+            techStack: ["Flutter (Web)"],
+            description: "Developed the interface for an AI-powered chatbot in the healthcare sector. It is a web application built with Flutter.",
+            logo: "",
+            link: {
+                label: "ai.evital.com.tr",
+                href: "https://ai.evital.com.tr",
+            },
+        },
+        {
             title: "evital - Online Health Service",
             techStack: ["Flutter", "Dart"],
             description:
@@ -172,8 +193,17 @@ export const RESUME_DATA_EN = {
                 href: "https://www.shipixy.com",
             },
         },
+
     ],
     extracurricularActivities: [
+        {
+            role: "Member",
+            organization: "KHS (Konya Hackerspace)",
+            start: "September 2025",
+            end: "Present",
+            description:
+                "Konya Hackerspace is where local hackers create awesome stuff. Konya Hackerspace supports hacker culture, brings together makers and inventors, and helps spread technical knowledge.",
+        },
         {
             role: "Trainee",
             organization: "Game & App Academy (Google and T3)",

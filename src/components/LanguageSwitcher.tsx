@@ -41,8 +41,8 @@ export function LanguageSwitcher() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                    <GlobeIcon className="h-5 w-5" />
+                <Button variant="ghost" size="icon" className="font-bold">
+                    {pathname.split('/')[1]?.toUpperCase() || 'TR'}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">

@@ -104,7 +104,7 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
                     <Button
                         variant="outline"
                         size="icon"
-                        className="transition-all bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10 hover:from-primary/20 hover:via-blue-400/20 hover:to-teal-400/20"
+                        className="hidden md:flex transition-all bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10 hover:from-primary/20 hover:via-blue-400/20 hover:to-teal-400/20"
                     >
                         <CommandIcon className="h-5 w-5" />
                         <span className="sr-only">{t('commands.title')}</span>

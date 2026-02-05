@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { RESUME_DATA_EN, RESUME_DATA_TR, RESUME_DATA_AR } from "@/data/resume-data";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, MailIcon } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { Footer } from "@/components/footer";
@@ -63,6 +63,7 @@ export default function Home() {
                         <div className="space-y-2">
                             <h1 className="text-4xl font-bold">{resumeData.name}</h1>
                             <p className="text-xl text-muted-foreground">{resumeData.about}</p>
+                            <p className="max-w-lg text-pretty font-mono text-sm text-muted-foreground mt-2">{resumeData.summary}</p>
                             {resumeData.location && (
                                 <p className="flex items-center justify-center text-sm text-muted-foreground mt-1">
                                     <MapPin className="h-4 w-4 mr-1" />
@@ -85,6 +86,19 @@ export default function Home() {
                                     </Link>
                                 </Button>
                             ))}
+                            {resumeData.contact.email && (
+                                <Button
+                                    asChild
+                                    variant="outline"
+                                    size="icon"
+                                    className="transition-all bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10 hover:from-primary/20 hover:via-blue-400/20 hover:to-teal-400/20"
+                                >
+                                    <a href={`mailto:${resumeData.contact.email}`}>
+                                        <MailIcon className="h-5 w-5" />
+                                        <span className="sr-only">Email</span>
+                                    </a>
+                                </Button>
+                            )}
                         </div>
                     </div>
 
