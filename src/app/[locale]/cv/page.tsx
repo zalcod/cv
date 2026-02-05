@@ -58,12 +58,12 @@ export default function CVPage() {
 
     return (
         <motion.main
-            className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16"
+            className="container relative mx-auto scroll-my-12 overflow-auto px-0 py-8 md:p-16 print:p-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
-            <div className="mx-auto w-full max-w-2xl space-y-8 bg-background dark:bg-background px-8 py-8 print:space-y-6 print:py-6 print:px-6 print:bg-white print:text-black">
+            <div className="mx-auto w-full max-w-2xl space-y-4 md:space-y-8 bg-background dark:bg-background px-4 py-4 md:px-8 md:py-8 print:space-y-6 print:py-6 print:px-6 print:bg-white print:text-black">
                 <div className="flex items-center justify-between print:hidden">
                     <Link href="/">
                         <Button
@@ -79,13 +79,13 @@ export default function CVPage() {
                 </div>
 
                 {/* Profile photo and name at the top - left aligned */}
-                <div className="flex flex-col md:flex-row items-start gap-4 print:flex-row print:gap-8 mb-8">
-                    <Avatar className="size-32 print:size-32 border-2 border-muted bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10">
+                <div className="flex flex-col md:flex-row items-start gap-4 print:flex-row print:gap-8 mb-4 md:mb-8">
+                    <Avatar className="size-24 md:size-32 print:size-32 border-2 border-muted bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10">
                         <AvatarImage src={resumeData.avatarUrl} alt={resumeData.name} />
                         <AvatarFallback>{resumeData.initials}</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col items-start text-left">
-                        <h1 className="text-3xl font-bold">{resumeData.name}</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold">{resumeData.name}</h1>
                         <p className="text-lg text-muted-foreground max-w-md">{resumeData.about}</p>
                         <p className="text-sm text-muted-foreground">{resumeData.location}</p>
                     </div>

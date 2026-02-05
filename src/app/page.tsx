@@ -19,17 +19,17 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16"
+      className="container relative mx-auto scroll-my-12 overflow-auto p-0 md:p-16 print:p-12"
     >
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white px-8 py-8 print:space-y-6 print:px-0 print:py-0">
+      <section className="mx-auto w-full max-w-2xl space-y-4 md:space-y-8 bg-white px-4 py-4 md:px-8 md:py-8 print:space-y-6 print:px-0 print:py-0">
         {/* Profile image and name at the top */}
-        <div className="flex flex-col items-center justify-center gap-4 mb-8">
+        <div className="flex flex-col items-center justify-center gap-4 mb-4 md:mb-8">
           <Avatar className="size-36 border-2 border-muted bg-gradient-to-br from-primary to-primary-foreground shadow-lg">
             <AvatarImage src={RESUME_DATA.avatarUrl} alt={RESUME_DATA.name} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
           <div className="flex flex-col items-center text-center">
-            <h1 className="text-3xl font-bold">{RESUME_DATA.name}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">{RESUME_DATA.name}</h1>
             <p className="text-xl text-muted-foreground mt-2">{RESUME_DATA.about}</p>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground mt-2">
               {RESUME_DATA.summary}

@@ -71,14 +71,7 @@ export function Navbar() {
                     <LanguageSwitcher />
 
                     {/* Search Button (visible only on mobile) */}
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        className="sm:hidden bg-white dark:bg-background border border-primary/30 hover:border-primary/50"
-                        onClick={handleSearchClick}
-                    >
-                        <Search className="h-5 w-5" />
-                    </Button>
+
 
                     {/* Theme Toggle Button */}
                     <Button

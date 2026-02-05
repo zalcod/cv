@@ -33,8 +33,8 @@ export default function Home() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 flex-grow">
-                <section className="mx-auto w-full max-w-2xl space-y-8">
+            <main className="container relative mx-auto scroll-my-12 overflow-auto px-0 py-8 md:p-16 flex-grow">
+                <section className="mx-auto w-full max-w-2xl space-y-4 md:space-y-8 px-4 md:px-0">
                     <div className="flex flex-col items-center text-center space-y-8">
                         <motion.div
                             className="relative"
