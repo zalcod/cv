@@ -109,7 +109,10 @@ export default function CVPage() {
                         <h2 className="text-2xl font-bold mb-4">{t('sections.workExperience')}</h2>
                         <div className="space-y-6">
                             {resumeData.work.map((job) => (
-                                <div key={job.company} className="border-b dark:border-gray-700 pb-6 last:border-0 bg-background dark:bg-background">
+                                <div
+                                    key={`${job.company}-${job.title}-${job.start}`}
+                                    className="border-b dark:border-gray-700 pb-6 last:border-0 bg-background dark:bg-background"
+                                >
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <h3 className="font-bold text-lg">{job.company}</h3>
@@ -203,6 +206,18 @@ export default function CVPage() {
                                         )}
                                     </CardContent>
                                 </Card>
+                            ))}
+                        </div>
+                    </Section>
+
+                    {/* Certifications */}
+                    <Section>
+                        <h2 className="text-2xl font-bold mb-4">{t('sections.certifications')}</h2>
+                        <div className="space-y-2">
+                            {resumeData.certifications.map((cert) => (
+                                <p key={cert} className="text-muted-foreground">
+                                    {cert}
+                                </p>
                             ))}
                         </div>
                     </Section>

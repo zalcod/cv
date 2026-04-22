@@ -90,7 +90,7 @@ export default function CVPage() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-bold">İş Deneyimi</h2>
                     {RESUME_DATA.work.map((work) => (
-                        <div key={work.company} className="space-y-2">
+                        <div key={`${work.company}-${work.title}-${work.start}`} className="space-y-2">
                             <div className="flex items-center justify-between">
                                 <h3 className="font-semibold">{work.company}</h3>
                                 <span className="text-sm text-muted-foreground">

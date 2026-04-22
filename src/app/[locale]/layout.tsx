@@ -32,7 +32,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} suppressHydrationWarning>
-            <body className={inter.className}>
+            <body className={inter.className} suppressHydrationWarning>
                 <Providers>
                     <NextIntlClientProvider locale={locale} messages={messages}>
                         <div className="min-h-screen bg-background">

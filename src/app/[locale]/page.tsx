@@ -4,10 +4,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { RESUME_DATA_EN, RESUME_DATA_TR, RESUME_DATA_AR } from "@/data/resume-data";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, MapPin, MailIcon } from "lucide-react";
+import { ArrowRight, Building2, Laptop, MapPin, MailIcon, Users } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { Footer } from "@/components/footer";
@@ -30,6 +31,17 @@ export default function Home() {
     };
 
     const resumeData = getResumeData();
+
+    const getWorkModeIcon = (mode: (typeof resumeData.workModes)[number]) => {
+        switch (mode) {
+            case "onSite":
+                return Building2;
+            case "hybrid":
+                return Users;
+            case "remote":
+                return Laptop;
+        }
+    };
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -63,13 +75,27 @@ export default function Home() {
                         <div className="space-y-2">
                             <h1 className="text-4xl font-bold">{resumeData.name}</h1>
                             <p className="text-xl text-muted-foreground">{resumeData.about}</p>
-                            <p className="max-w-lg text-pretty font-mono text-sm text-muted-foreground mt-2">{resumeData.summary}</p>
-                            {resumeData.location && (
+                            <p className="max-w-lg text-pretty font-mono text-sm text-muted-foreground mt-2">{resumeData.homeSummary}</p>
+                            {resumeData.cities?.length ? (
                                 <p className="flex items-center justify-center text-sm text-muted-foreground mt-1">
                                     <MapPin className="h-4 w-4 mr-1" />
-                                    <span>{resumeData.location}</span>
+                                    <span>{resumeData.cities.join(" / ")}</span>
                                 </p>
-                            )}
+                            ) : null}
+
+                            {resumeData.workModes?.length ? (
+                                <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
+                                    {resumeData.workModes.map((mode) => {
+                                        const Icon = getWorkModeIcon(mode);
+                                        return (
+                                            <Badge key={mode} variant="secondary" className="gap-1">
+                                                <Icon className="h-3.5 w-3.5" />
+                                                {t(`workModes.${mode}`)}
+                                            </Badge>
+                                        );
+                                    })}
+                                </div>
+                            ) : null}
                         </div>
                         <div className="flex gap-2">
                             {resumeData.contact.social.map((social) => (

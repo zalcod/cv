@@ -8,8 +8,11 @@ export type ResumeData = {
   initials: string;
   location: string;
   locationLink: string;
+  cities: string[];
+  workModes: ("onSite" | "hybrid" | "remote")[];
   about: string;
   summary: string;
+  homeSummary: string;
   avatarUrl: string;
   personalWebsiteUrl: string;
   contact: {
@@ -21,6 +24,7 @@ export type ResumeData = {
       icon: any;
     }[];
   };
+  certifications: string[];
   education: {
     school: string;
     degree: string;
@@ -67,15 +71,20 @@ export type ResumeData = {
 export const RESUME_DATA_EN: ResumeData = {
   name: "Zal Solmuş",
   initials: "ZS",
-  location: "Turkey",
+  location: "Konya, Turkey • Open to Istanbul / Bursa • Hybrid or Remote",
   locationLink: "https://www.google.com/maps/place/Bursa",
-  about: "Software Developer | Digital Transformation",
-  summary: "I combine software development with business strategy. Building on my technical background in Mobile, Web, and AI-Generated application development, I now focus on digital transformation and business process improvement. I modernize companies' digital infrastructures, databases, and operational workflows end-to-end. I ensure the healthy execution of IT operations and information flow. I don't just write code; I build sustainable systems that grow businesses.",
+  cities: ["Konya", "Istanbul", "Bursa"],
+  workModes: ["hybrid", "remote", "onSite"],
+  about: "Software Developer | Business Analyst",
+  summary:
+    "Software Developer and Business Analyst with approximately four years of experience building user-facing products. Specialized in cross-platform mobile development with Flutter since 2021, with growing expertise in full-stack development, infrastructure, and business analysis. Most of my career has been spent inside startup environments and end-to-end delivery teams — working hands-on across every layer of the product and collaborating closely with project management to take ideas from first requirements to release. Comfortable moving between technical execution and business process: writing code, modeling workflows, and translating stakeholder needs into clear specifications.",
+  homeSummary:
+    "Software Developer and Business Analyst with ~4 years of experience building products across mobile, SaaS, full-stack, and infrastructure.",
   avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
   personalWebsiteUrl: "https://zalsolmus.com",
   contact: {
     email: "zalsolmus@gmail.com",
-    tel: "",
+    tel: "+90 543 747 89 77",
     social: [
       {
         name: "GitHub",
@@ -99,43 +108,69 @@ export const RESUME_DATA_EN: ResumeData = {
       }
     ],
   },
+  certifications: [
+    "Google Project Management Fundamentals",
+    "Front-End & React 18.x from Scratch (52+ Hours Bootcamp)",
+    "Flutter Bootcamp Participation Certificate",
+    "GDSC Core Team Member — Certificate of Appreciation (2020 – 2021)",
+  ],
   education: [
     {
       school: "Yalova University",
       degree: "Bachelor's Degree in Computer Engineering",
-      start: "2021",
-      end: "2024",
+      start: "Sep 2021",
+      end: "Jun 2024",
       additionalInfo: "Transferred from Çukurova University.",
     },
     {
       school: "Çukurova University",
       degree: "English Prep Class and first-year coursework",
-      start: "2020",
+      start: "2019",
       end: "2021",
       additionalInfo: "Completed with a GPA of 3.43.",
     }
+    ,
+    {
+      school: "Ceylanpınar Science High School",
+      degree: "High School Diploma",
+      start: "2014",
+      end: "2018",
+      additionalInfo: "",
+    },
   ],
   work: [
     {
       company: "Kolat Group",
       link: "https://kolatmotor.com.tr",
       badges: ["On-site"],
-      title: "Head of Digital & Operations",
+      title: "Full Stack Developer",
       logo: "",
       start: "August 2025",
       end: "Present",
-      description: "Leading the digital transformation and operational strategy for a group company operating in Automotive, Construction, and Plastics. My role bridges the gap between software engineering and business development across 6 brands. I architected and developed B2B dealer management systems and mobile apps, and enforced data-driven production via ERP and database integrations. I also restructured internal hierarchies and IT processes, provided retail consulting to the dealer network to implement software-driven sales strategies, and managed the corporate identity and social media presence for all group brands to ensure a cohesive digital footprint.",
+      description:
+        "Migrated legacy projects inherited from previous software agencies and freelance developers into the company's infrastructure by moving them to VPS servers and integrating version control systems. Planned and implemented a CI/CD workflow tailored for small development teams, improving release efficiency and reducing deployment friction. Relocated infrastructure to Cloudflare, strengthening security posture and improving performance across all active projects. Extended and modernized the Falcon Motorcycle website at the PHP source-code level, delivering UI and UX improvements; applied a similar modernization approach across seven additional projects. Rebuilt the Kolat Group corporate website from the ground up as an infographic-driven experience.",
+    },
+    {
+      company: "Kolat Group",
+      link: "https://kolatmotor.com.tr",
+      badges: ["On-site"],
+      title: "Business Analyst",
+      logo: "",
+      start: "August 2025",
+      end: "Present",
+      description:
+        "Support the business analysis process within the production group by documenting existing workflows and gathering requirements from internal stakeholders. Help bridge business units and technical teams by translating operational needs into clear, actionable specifications. Contribute to the design of new workflows and assist in the planning and rollout of system integrations.",
     },
     {
       company: "Eczacibasi Evital",
       link: "https://evital.com.tr/",
       badges: ["Hybrid"],
-      title: "Mobile Application Developer",
+      title: "Mobile Developer",
       logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
       start: "August 2024",
       end: "August 2025",
       description:
-        "Developed mobile applications for the company's products and services. Worked on the development of the 'Evital' mobile application, which is used by thousands of users. Engaged in the complete mobile application development lifecycle, including UI/UX design, state management, and API integration.",
+        "Developed mobile applications supporting the company's digital healthcare products and services. Contributed to the 'Evital' mobile application — downloaded by more than 200,000 users and actively serving thousands of concurrent users. Worked across the full mobile application lifecycle, including UI/UX implementation, state management, and API integration.",
     },
     {
       company: "Fabrikod",
@@ -143,21 +178,10 @@ export const RESUME_DATA_EN: ResumeData = {
       badges: ["Remote"],
       title: "Flutter Developer",
       logo: "",
-      start: "January 2023",
+      start: "August 2022",
       end: "July 2024",
       description:
-        "Published several applications developed with Flutter on the App Store and Play Store, including 'Sleepy Baby: White Noise', 'Kindertrack', and 'Kinderway'. Participated in all stages of the mobile application development process and solved various technical challenges. Worked with state management solutions like GetX and Provider. Implemented UI and UX on the code side by adhering to responsive design principles.",
-    },
-    {
-      company: "Fabrikod",
-      link: "https://fabrikod.com",
-      badges: ["Remote"],
-      title: "Flutter Developer Intern",
-      logo: "",
-      start: "August 2022",
-      end: "January 2023",
-      description:
-        "Contributed to the development of 'Sleepy Baby: White Noise' and 'Sufi Sound: White Noise' mobile applications. Enhanced skills by engaging in the complete mobile application development lifecycle.",
+        "Designed, developed, and published multiple Flutter applications on the App Store and Google Play, including 'Sleepy Baby: White Noise', 'Kindertrack', and 'Kinderway'. Participated in every phase of the mobile development process and resolved a wide range of technical challenges, from performance tuning to platform-specific integrations. Applied state management solutions such as GetX and Provider, and built responsive, adaptive UIs aligned with modern design principles.",
     },
     {
       company: "Gorsentam Agriculture Technologies",
@@ -166,34 +190,64 @@ export const RESUME_DATA_EN: ResumeData = {
       title: "Flutter Developer Intern",
       logo: "",
       start: "June 2022",
-      end: "August 2023",
+      end: "August 2022",
       description:
-        "Developed a mobile application focused on agricultural technologies using Flutter. Gained proficiency in Dart and worked on UI/UX design and mobile app development.",
+        "Built a mobile application focused on agricultural technologies using Flutter and Dart. Gained proficiency in Dart and contributed to UI/UX design decisions throughout the development process.",
     }
   ],
   skills: [
-    "Digital Transformation",
-    "ERP Processes",
-    "Business Analysis",
-    "Process Design",
-    "Dealer / Channel Management",
-    "Data Analysis",
-    "Corporate Identity",
-    "Social Media Operations",
     "Flutter",
+    "Dart",
+    "PHP",
+    "JavaScript",
+    "React",
+    "HTML & CSS",
+    "VPS Administration",
+    "Cloudflare",
+    "CI/CD",
+    "Git",
+    "Version Control",
+    "Requirements Gathering",
+    "Process Modeling",
+    "Business Development",
+    "AI Integrations",
+    "No-Code Development Tools",
+    "UI & UX Development",
+    "Algorithms",
     "Leadership",
     "Clean Code",
-    "HTML & CSS",
-    "Webflow",
-    "UI & UX Design",
-    "JavaScript",
-    "Dart"
+    "Jira",
+    "Bitbucket",
+    "ClickUp",
   ],
   projects: [
     {
-      title: "Falcon Motorcycle - Website",
-      techStack: ["PHP"],
-      description: "Corporate website developed for the Falcon Motorcycle brand.",
+      title: "evital AI Chatbot (Evo)",
+      techStack: ["Flutter", "Dart", "AI Integration"],
+      description:
+        "Designed and developed the interface for Evo, an AI assistant that guides users across the evital platform, routes them to the right specialists, and supports the full appointment flow.",
+      logo: "",
+      link: {
+        label: "evital",
+        href: "https://evital.com.tr/",
+      },
+    },
+    {
+      title: "Evital – Online Healthcare Services",
+      techStack: ["Flutter", "Dart"],
+      description:
+        "Mobile application supporting the company's digital healthcare products and services, serving more than 200,000 users.",
+      logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
+      link: {
+        label: "play.google.com",
+        href: "https://play.google.com/store/apps/details?id=tr.com.evital.public&hl=tr"
+      }
+    },
+    {
+      title: "Falcon Motorcycle Website",
+      techStack: ["PHP", "HTML & CSS", "JavaScript"],
+      description:
+        "Extended and modernized the PHP source code with targeted UI/UX improvements for a live corporate website.",
       logo: "",
       link: {
         label: "falconmotosiklet.com",
@@ -201,25 +255,15 @@ export const RESUME_DATA_EN: ResumeData = {
       },
     },
     {
-      title: "Evital AI",
-      techStack: ["Flutter (Web)"],
-      description: "Developed the interface for an AI-powered chatbot in the healthcare sector. It is a web application built with Flutter.",
+      title: "Kolat Group Corporate Website",
+      techStack: ["HTML & CSS", "JavaScript"],
+      description:
+        "Corporate website rebuilt from the ground up with an infographic-driven presentation layer.",
       logo: "",
       link: {
-        label: "ai.evital.com.tr",
-        href: "https://ai.evital.com.tr",
+        label: "kolatmotor.com.tr",
+        href: "https://kolatmotor.com.tr",
       },
-    },
-    {
-      title: "evital - Online Healthcare Services",
-      techStack: ["Flutter", "Dart"],
-      description:
-        "A mobile application for the company's products and services.",
-      logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
-      link: {
-        label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=tr.com.evital.public&hl=tr"
-      }
     },
     {
       title: "Sleepy Baby: White Noise",
@@ -233,20 +277,9 @@ export const RESUME_DATA_EN: ResumeData = {
       }
     },
     {
-      title: "White Sound",
-      techStack: ["Flutter", "Dart"],
-      description:
-        "A mobile app providing white noise sounds for adults to help them relax.",
-      logo: "",
-      link: {
-        label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=com.fabrikod.whitesound&pcampaignid=web_share"
-      }
-    },
-    {
       title: "Kindertrack",
       techStack: ["Flutter", "Dart"],
-      description: "Parent-Child Tracking Application.",
+      description: "Parent–child tracking application designed to keep families connected.",
       logo: "",
       link: {
         label: "play.google.com",
@@ -256,30 +289,32 @@ export const RESUME_DATA_EN: ResumeData = {
     {
       title: "Kinderway",
       techStack: ["Flutter", "Dart"],
-      description: "An application for tracking parent-child activities.",
+      description: "Application for tracking parent–child activities and shared experiences.",
       logo: "",
       link: {
         label: "play.google.com",
         href: "https://play.google.com/store/apps/details?id=com.fabrikod.kinderway&hl=en_CA&gl=US"
       }
+    },
+    {
+      title: "Shipixy",
+      techStack: ["Webflow"],
+      description: "Marketing website built for customers of a U.S.-based logistics services company.",
+      logo: "",
+      link: {
+        label: "shipixy.com",
+        href: "https://www.shipixy.com",
+      },
     }
   ],
   extracurricularActivities: [
-    {
-      role: "Member",
-      organization: "KHS (Konya Hackerspace)",
-      start: "September 2025",
-      end: "Present",
-      description:
-        "Konya Hackerspace is where local hackers create awesome stuff. Konya Hackerspace supports hacker culture, brings together makers and inventors, and helps spread technical knowledge.",
-    },
     {
       role: "Trainee",
       organization: "Game & App Academy (Google and T3)",
       start: "January 2024",
       end: "May 2024",
       description:
-        "Received training on application development with Flutter and participated in various events. Attended courses such as Project Management and application development for iOS and Android devices with Flutter."
+        "Completed training on mobile application development with Flutter and participated in industry events, including courses on project management and native development for iOS and Android.",
     },
     {
       role: "Event Organizer",
@@ -287,23 +322,15 @@ export const RESUME_DATA_EN: ResumeData = {
       start: "October 2023",
       end: "November 2023",
       description:
-        "Organized a mentor-mentee event to connect experienced developers with new entrants to the industry."
+        "Organized a mentor–mentee program connecting experienced developers with newcomers to the industry.",
     },
     {
       role: "Core Team Member",
-      organization: "GDSC Yalova",
-      start: "September 2022",
-      end: "June 2023",
+      organization: "GDSC Yalova & Çukurova",
+      start: "2020",
+      end: "2021",
       description:
-        "Organized various software events and invited renowned software developers from Turkey. Strengthened the community by hosting a DevFest event."
-    },
-    {
-      role: "Core Team Member",
-      organization: "GDSC Çukurova",
-      start: "October 2020",
-      end: "April 2021",
-      description:
-        "Organized various software events and invited renowned software developers from Turkey.",
+        "Coordinated software events across both chapters, invited prominent developers from Turkey, and strengthened local student communities — including hosting a DevFest event at Yalova.",
     },
   ],
   languages: ["English", "Turkish"],
@@ -319,15 +346,20 @@ export const RESUME_DATA_EN: ResumeData = {
 export const RESUME_DATA_TR: ResumeData = {
   name: "Zal Solmuş",
   initials: "ZS",
-  location: "Türkiye",
+  location: "Konya, Türkiye • İstanbul / Bursa'ya açık • Hibrit veya Uzaktan",
   locationLink: "https://www.google.com/maps/place/Bursa",
-  about: "Yazılım Geliştirici | Dijital Dönüşüm",
-  summary: "Yazılım geliştirmeyi, iş stratejileriyle birleştiriyorum. Mobil, Web, AI Generated uygulama geliştirme kökenli teknik geçmişimi, dijital dönüşüm ve iş süreçlerini geliştirme ile devam ettiriyorum. Şirketlerin dijital altyapılarını, veritabanı ve operasyonel süreçlerini uçtan uca modernize ediyorum. Bilgi işlem operasyonları ve bilgi akışının sağlıklı şekilde yürütülmesi üstüne çalışıyorum. Sadece kod yazan değil, iş büyüten sürdürülebilir sistemler kuruyorum.",
+  cities: ["Konya", "İstanbul", "Bursa"],
+  workModes: ["hybrid", "remote", "onSite"],
+  about: "Yazılım Geliştirici | İş Analisti",
+  summary:
+    "Yaklaşık dört yıllık deneyime sahip, ürün odaklı çalışan bir Yazılım Geliştiriciyim. 2021'den bu yana Flutter ile mobil uygulamalar geliştiriyorum; son dönemde full-stack geliştirme, altyapı yönetimi ve iş analizi alanlarında da uzmanlığımı genişletiyorum. Kariyerimin büyük bölümünü start-up ortamlarında ve ürünü baştan sona geliştiren ekiplerde geçirdim; proje yönetim ekipleriyle paralel çalışarak fikir aşamasından yayına uzanan süreçlerin her katmanında aktif rol aldım. Teknik geliştirme ile iş süreçleri arasında rahatça köprü kurabiliyor; kod yazmak, iş akışlarını modellemek ve ihtiyaçları belirleyip dönüştürmek arasında akıcı biçimde geçiş yapıyorum.",
+  homeSummary:
+    "Yaklaşık 4 yıllık deneyime sahip Yazılım Geliştirici & İş Analisti. Mobil, SaaS, full-stack ve altyapı alanlarında çalışıyorum.",
   avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
   personalWebsiteUrl: "https://zalsolmus.com",
   contact: {
     email: "zalsolmus@gmail.com",
-    tel: "",
+    tel: "+90 543 747 89 77",
     social: [
       {
         name: "GitHub",
@@ -351,20 +383,33 @@ export const RESUME_DATA_TR: ResumeData = {
       }
     ],
   },
+  certifications: [
+    "Google Proje Yönetimi Temelleri",
+    "Sıfırdan Projelerle Front-End ve React 18.x (52+ Saat)",
+    "Flutter Kampı Katılım Sertifikası",
+    "GDSC Çekirdek Ekip Üyesi — Takdir Sertifikası (2020 – 2021)",
+  ],
   education: [
     {
       school: "Yalova Üniversitesi",
       degree: "Bilgisayar Mühendisliği Lisans Derecesi",
-      start: "2021",
-      end: "2024",
+      start: "Eyl 2021",
+      end: "Haz 2025",
       additionalInfo: "Çukurova Üniversitesi'nden yatay geçiş yapıldı.",
     },
     {
       school: "Çukurova Üniversitesi",
-      degree: "İngilizce Hazırlık Sınıfı ve birinci sınıf dersleri",
-      start: "2020",
+      degree: "Bilgisayar Mühendisliği Lisans",
+      start: "2019",
       end: "2021",
-      additionalInfo: "3.43 not ortalaması ile tamamlandı.",
+      additionalInfo: "İngilizce Hazırlık Sınıfı ve birinci sınıf derslerini 3.43 GPA ile tamamladım.",
+    },
+    {
+      school: "Ceylanpınar Fen Lisesi",
+      degree: "Lise Diploması",
+      start: "2014",
+      end: "2018",
+      additionalInfo: "",
     },
   ],
   work: [
@@ -372,12 +417,23 @@ export const RESUME_DATA_TR: ResumeData = {
       company: "Kolat Group",
       link: "https://kolatmotor.com.tr",
       badges: ["Yerinde"],
-      title: "Dijital ve Operasyonel Süreçler Lideri",
+      title: "Full Stack Geliştirici",
       logo: "",
       start: "Ağustos 2025",
       end: "Şu an",
       description:
-        "Otomotiv, İnşaat ve Plastik sektörlerinde faaliyet gösteren holding bünyesindeki 6 farklı markanın (Falcon, TOGO, vb.) uçtan uca dijital ve ticari dönüşümünü yönetiyorum. Sorumluluklarım teknik altyapıdan sahadaki satışa kadar geniş bir yelpazeyi kapsıyor. Bayi yönetim panellerinin ve mobil uygulamaların mimarisini tasarlayıp geliştirdim (Flutter & Web). Üretimde ERP ve veritabanı entegrasyonlarını sağlayarak veri akışını optimize ettim. Şirket içi hiyerarşik yapıyı ve bilgi işlem süreçlerini yeniden kurguladım. Perakende satış danışmanlığı yaparak bayilerin satış performansını artıracak dijital sistemler kurdum. Tüm grup markalarının kurumsal kimlik inşasını ve sosyal medya stratejilerini yöneterek bütünleşik bir marka dili oluşturdum.",
+        "Önceki yazılım ajanslarından ve serbest çalışan geliştiricilerden devralınan projeleri şirket bünyesine taşıdım; projeleri VPS sunucularına aktarıp versiyon yönetim sistemlerini entegre ettim. Küçük geliştirme ekipleri için verimlilik sağlayacak şekilde CI/CD süreçlerini planlayıp hayata geçirdim. Altyapıyı Cloudflare'a taşıyarak tüm aktif projelere ek güvenlik ve performans kazandırdım. Falcon Motosiklet web sitesinin PHP kaynak kodu üzerinde geliştirmeler yaparak UI ve UX iyileştirmeleri gerçekleştirdim; aynı modernizasyon yaklaşımını 7 ayrı projede uyguladım. Kolat Group kurumsal web sitesini infografik yapıda baştan tasarlayıp geliştirdim.",
+    },
+    {
+      company: "Kolat Group",
+      link: "https://kolatmotor.com.tr",
+      badges: ["Yerinde"],
+      title: "İş Analisti",
+      logo: "",
+      start: "Ağustos 2025",
+      end: "Şu an",
+      description:
+        "Üretim grubumuzdaki iş süreçlerinin modellenmesine ve iç paydaşlardan gereksinimlerin toplanmasına destek veriyorum. İş birimleri ile teknik ekipler arasında iletişimi kolaylaştırıyor, operasyonel ihtiyaçların anlaşılır teknik gereksinimlere dönüştürülmesine katkı sağlıyorum. Yeni iş akışlarının tasarımına ve sistem entegrasyonlarının planlanıp canlıya alınması süreçlerine aktif olarak katılıyorum.",
     },
     {
       company: "Eczacibasi Evital",
@@ -388,7 +444,7 @@ export const RESUME_DATA_TR: ResumeData = {
       start: "Ağustos 2024",
       end: "Ağustos 2025",
       description:
-        "Şirketin ürün ve hizmetleri için mobil uygulamalar geliştirdim. Binlerce kullanıcı tarafından kullanılan 'Evital' mobil uygulamasının geliştirilmesinde çalıştım. UI/UX tasarımı, durum yönetimi ve API entegrasyonu dahil olmak üzere mobil uygulama geliştirme yaşam döngüsünün tamamında yer aldım.",
+        "Şirketin dijital sağlık ürün ve hizmetlerini destekleyen mobil uygulamalar geliştirdim. 200.000'i aşkın indirmeye ulaşan ve binlerce kullanıcının aynı anda aktif olarak kullandığı 'evital' mobil uygulamasının geliştirme ekibinde yer aldım. UI/UX geliştirme, durum yönetimi (state management) ve API entegrasyonu dahil olmak üzere mobil uygulama geliştirme yaşam döngüsünün tüm aşamalarında görev aldım.",
     },
     {
       company: "Fabrikod",
@@ -396,21 +452,10 @@ export const RESUME_DATA_TR: ResumeData = {
       badges: ["Uzaktan"],
       title: "Flutter Geliştirici",
       logo: "",
-      start: "Ocak 2023",
+      start: "Ağustos 2022",
       end: "Temmuz 2024",
       description:
-        "App Store ve Play Store'da 'Sleepy Baby: White Noise', 'Kindertrack' ve 'Kinderway' dahil olmak üzere Flutter ile geliştirilmiş birkaç uygulama yayınladım. Mobil uygulama geliştirme sürecinin tüm aşamalarında yer aldım ve çeşitli teknik zorlukları çözdüm. GetX ve Provider gibi durum yönetimi çözümleriyle çalıştım. Duyarlı tasarım ilkelerine uyarak kod tarafında UI ve UX uyguladım.",
-    },
-    {
-      company: "Fabrikod",
-      link: "https://fabrikod.com",
-      badges: ["Uzaktan"],
-      title: "Flutter Geliştirici Stajyeri",
-      logo: "",
-      start: "Ağustos 2022",
-      end: "Ocak 2023",
-      description:
-        "'Sleepy Baby: White Noise' ve 'Sufi Sound: White Noise' mobil uygulamalarının geliştirilmesine katkıda bulundum. Mobil uygulama geliştirme yaşam döngüsünün tamamında yer alarak becerilerimi geliştirdim.",
+        "App Store ve Google Play'de 'Sleepy Baby: White Noise', 'Kindertrack' ve 'Kinderway' başta olmak üzere birden fazla Flutter uygulaması yayımladım. Mobil uygulama geliştirme sürecinin tüm aşamalarında aktif rol aldım; performans optimizasyonundan platforma özel entegrasyonlara kadar çeşitli teknik zorlukları çözüme kavuşturdum. GetX ve Provider gibi durum yönetimi çözümleriyle çalıştım; modern tasarım ilkelerine uygun, duyarlı ve uyarlanabilir kullanıcı arayüzleri geliştirdim.",
     },
     {
       company: "Gorsentam Tarım Teknolojileri",
@@ -419,34 +464,64 @@ export const RESUME_DATA_TR: ResumeData = {
       title: "Flutter Geliştirici Stajyeri",
       logo: "",
       start: "Haziran 2022",
-      end: "Ağustos 2023",
+      end: "Ağustos 2022",
       description:
-        "Flutter kullanarak tarım teknolojilerine odaklanan bir mobil uygulama geliştirdim. Dart dilinde uzmanlık kazandım ve UI/UX tasarımı ve mobil uygulama geliştirme üzerinde çalıştım.",
+        "Flutter ile tarım teknolojileri odaklı bir mobil uygulama geliştirdim. Dart dilinde uzmanlaşarak geliştirme sürecinin tamamında UI/UX tasarım kararlarına katkı sağladım.",
     },
   ],
   skills: [
-    "Dijital Dönüşüm",
-    "ERP Süreçleri",
-    "İş Analizi",
-    "Süreç Tasarımı",
-    "Bayi / Kanal Yönetimi",
-    "Veri Analizi",
-    "Kurumsal Kimlik",
-    "Sosyal Medya Operasyonları",
     "Flutter",
-    "Liderlik",
-    "Temiz Kod",
-    "HTML & CSS",
-    "Webflow",
-    "UI & UX Tasarımı",
-    "JavaScript",
     "Dart",
+    "PHP",
+    "JavaScript",
+    "React",
+    "HTML & CSS",
+    "VPS Yönetimi",
+    "Cloudflare",
+    "CI/CD",
+    "Git",
+    "Versiyon Yönetimi",
+    "Gereksinim Analizi",
+    "Süreç Modelleme",
+    "İş Geliştirme",
+    "İş Analizi için Yapay Zeka",
+    "Jira",
+    "Bitbucket",
+    "ClickUp",
+    "Yapay Zeka Entegrasyonları",
+    "No-Code Geliştirme Araçları",
+    "Temiz Kod",
+    "UI & UX Geliştirme",
+    "Algoritmalar",
   ],
   projects: [
     {
-      title: "Falcon Motosiklet - Web Sitesi",
-      techStack: ["PHP"],
-      description: "Falcon Motosiklet markası için geliştirilen kurumsal web sitesi.",
+      title: "evital Yapay Zeka Asistanı (Evo)",
+      techStack: ["Flutter", "Dart", "Yapay Zeka Entegrasyonu"],
+      description:
+        "evital platformunda kullanıcılara rehberlik eden, onları doğru uzmanlara yönlendiren ve randevu sürecini uçtan uca destekleyen yapay zekâ asistanı Evo'nun arayüzünü tasarlayıp geliştirdim.",
+      logo: "",
+      link: {
+        label: "evital",
+        href: "https://evital.com.tr/",
+      },
+    },
+    {
+      title: "Evital – Online Sağlık Hizmetleri",
+      techStack: ["Flutter", "Dart"],
+      description:
+        "Şirketin dijital sağlık ürün ve hizmetlerini destekleyen, 200.000'i aşkın kullanıcıya hitap eden mobil uygulama.",
+      logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
+      link: {
+        label: "play.google.com",
+        href: "https://play.google.com/store/apps/details?id=tr.com.evital.public&hl=tr"
+      },
+    },
+    {
+      title: "Falcon Motosiklet Web Sitesi",
+      techStack: ["PHP", "HTML & CSS", "JavaScript"],
+      description:
+        "PHP kaynak kodu üzerinde yapılan geliştirmeler ve hedefe yönelik UI/UX iyileştirmelerini içeren kurumsal web sitesi.",
       logo: "",
       link: {
         label: "falconmotosiklet.com",
@@ -454,24 +529,14 @@ export const RESUME_DATA_TR: ResumeData = {
       },
     },
     {
-      title: "Evital AI",
-      techStack: ["Flutter (Web)"],
-      description: "Sağlık alanında hizmet veren yapay zeka destekli chatbot arayüzünü geliştirdim. Flutter ile geliştirilmiş bir web uygulamasıdır.",
+      title: "Kolat Group Kurumsal Web Sitesi",
+      techStack: ["HTML & CSS", "JavaScript"],
+      description:
+        "İnfografik yapıda baştan tasarlanıp geliştirilen kurumsal web sitesi.",
       logo: "",
       link: {
-        label: "ai.evital.com.tr",
-        href: "https://ai.evital.com.tr",
-      },
-    },
-    {
-      title: "evital - Online Sağlık Hizmeti",
-      techStack: ["Flutter", "Dart"],
-      description:
-        "Şirketin ürün ve hizmetleri için bir mobil uygulama.",
-      logo: "https://play-lh.googleusercontent.com/lwZHv_QctpYcfnSk95ewKEjYN3KEvoXJ72TBGTyNfqz1hsH3OItifDqSBUi6mtcyAgI",
-      link: {
-        label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=tr.com.evital.public&hl=tr"
+        label: "kolatmotor.com.tr",
+        href: "https://kolatmotor.com.tr",
       },
     },
     {
@@ -486,20 +551,9 @@ export const RESUME_DATA_TR: ResumeData = {
       },
     },
     {
-      title: "White Sound",
-      techStack: ["Flutter", "Dart"],
-      description:
-        "Yetişkinlerin rahatlamasına yardımcı olmak için beyaz gürültü sesleri sağlayan bir mobil uygulama.",
-      logo: "",
-      link: {
-        label: "play.google.com",
-        href: "https://play.google.com/store/apps/details?id=com.fabrikod.whitesound&pcampaignid=web_share",
-      },
-    },
-    {
       title: "Kindertrack",
       techStack: ["Flutter", "Dart"],
-      description: "Ebeveyn-Çocuk Takip Uygulaması.",
+      description: "Aileleri birbirine bağlayan ebeveyn–çocuk takip uygulaması.",
       logo: "",
       link: {
         label: "play.google.com",
@@ -509,7 +563,7 @@ export const RESUME_DATA_TR: ResumeData = {
     {
       title: "Kinderway",
       techStack: ["Flutter", "Dart"],
-      description: "Ebeveyn-çocuk aktivitelerini takip etmek için bir uygulama.",
+      description: "Ebeveyn–çocuk aktivitelerini ve paylaşılan deneyimleri takip etmeye yönelik uygulama.",
       logo: "",
       link: {
         label: "play.google.com",
@@ -519,7 +573,7 @@ export const RESUME_DATA_TR: ResumeData = {
     {
       title: "Shipixy",
       techStack: ["Webflow"],
-      description: "Bir nakliye şirketi için web sitesi. Bileşenlerin çoğunu Webflow ile geliştirdim. Webflow'un CRM ve e-posta altyapısı entegre edildi.",
+      description: "ABD merkezli bir lojistik firmasının müşterileri için geliştirilen pazarlama web sitesi.",
       logo: "",
       link: {
         label: "shipixy.com",
@@ -529,15 +583,7 @@ export const RESUME_DATA_TR: ResumeData = {
   ],
   extracurricularActivities: [
     {
-      role: "Üye",
-      organization: "KHS (Konya Hackerspace)",
-      start: "Eylül 2025",
-      end: "Şu an",
-      description:
-        "Konya Hackerspace is where local hackers create awesome stuff. Konya Hackerspace supports hacker culture, brings together makers and inventors, and helps spread technical knowledge.",
-    },
-    {
-      role: "Eğitmen",
+      role: "Kursiyer",
       organization: "Game & App Academy (Google ve T3)",
       start: "Ocak 2024",
       end: "Mayıs 2024",
@@ -554,22 +600,14 @@ export const RESUME_DATA_TR: ResumeData = {
     },
     {
       role: "Çekirdek Ekip Üyesi",
-      organization: "GDSC Yalova",
-      start: "Eylül 2022",
-      end: "Haziran 2023",
+      organization: "GDSC Yalova & Çukurova",
+      start: "2020",
+      end: "2021",
       description:
-        "Organized various software events and invited renowned software developers from Turkey. Strengthened the community by hosting a DevFest event.",
-    },
-    {
-      role: "Çekirdek Ekip Üyesi",
-      organization: "GDSC Çukurova",
-      start: "October 2020",
-      end: "April 2021",
-      description:
-        "Organized various software events and invited renowned software developers from Turkey.",
+        "Her iki şubede yazılım etkinlikleri düzenleyip Türkiye'nin tanınmış geliştiricilerini davet ettim; öğrenci topluluklarını güçlendirdim ve Yalova'da DevFest etkinliğine ev sahipliği yaptım.",
     },
   ],
-  languages: ["English", "Turkish"],
+  languages: ["Türkçe (Ana Dil)", "İngilizce (Profesyonel Çalışma Yeterliliği)"],
   blogPosts: [
     {
       title: "Substack Blog",
@@ -584,8 +622,11 @@ export const RESUME_DATA_AR: ResumeData = {
   initials: "ZS",
   location: "تركيا",
   locationLink: "https://www.google.com/maps/place/Bursa",
+  cities: [],
+  workModes: [],
   about: "مطور برمجيات | التحول الرقمي",
   summary: "أدمج تطوير البرمجيات مع استراتيجيات العمل. أواصل مسيرتي المهنية التي بدأت بتطوير تطبيقات الهاتف المحمول والويب والتطبيقات المولدة بالذكاء الاصطناعي، بالتركيز الآن على التحول الرقمي وتحسين العمليات التجارية. أقوم بتحديث البنى التحتية الرقمية وقواعد البيانات والعمليات التشغيلية للشركات من البداية إلى النهاية. أعمل على ضمان سير عمليات تكنولوجيا المعلومات وتدفق المعلومات بشكل سليم. أنا لا أكتب التعليمات البرمجية فحسب، بل أقوم ببناء أنظمة مستدامة تساهم في نمو الأعمال.",
+  homeSummary: "مطور برمجيات يطوّر منتجات (موبايل وSaaS) ويجمع بين التنفيذ التقني واحتياجات الأعمال.",
   avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
   personalWebsiteUrl: "https://zalsolmus.com",
   contact: {
@@ -614,6 +655,7 @@ export const RESUME_DATA_AR: ResumeData = {
       }
     ],
   },
+  certifications: [],
   education: [
     {
       school: "جامعة يالوفا",

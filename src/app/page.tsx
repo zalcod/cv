@@ -3,7 +3,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon, MailIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Building2, GlobeIcon, Laptop, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { motion } from "framer-motion";
@@ -13,6 +14,28 @@ import { SocialLinks } from "@/components/social-links";
 import { BlogPosts } from "@/components/blog-posts";
 
 export default function Home() {
+  const getWorkModeIcon = (mode: (typeof RESUME_DATA.workModes)[number]) => {
+    switch (mode) {
+      case "onSite":
+        return Building2
+      case "hybrid":
+        return Users
+      case "remote":
+        return Laptop
+    }
+  }
+
+  const getWorkModeLabel = (mode: (typeof RESUME_DATA.workModes)[number]) => {
+    switch (mode) {
+      case "onSite":
+        return "Yerinde"
+      case "hybrid":
+        return "Hibrit"
+      case "remote":
+        return "Uzaktan"
+    }
+  }
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -32,7 +55,7 @@ export default function Home() {
             <h1 className="text-2xl md:text-3xl font-bold">{RESUME_DATA.name}</h1>
             <p className="text-xl text-muted-foreground mt-2">{RESUME_DATA.about}</p>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground mt-2">
-              {RESUME_DATA.summary}
+              {RESUME_DATA.homeSummary}
             </p>
             <div className="flex items-center mt-2">
               <GlobeIcon className="mr-1 size-3" />
@@ -42,9 +65,22 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                {RESUME_DATA.location}
+                {RESUME_DATA.cities.join(" / ")}
               </a>
             </div>
+            {RESUME_DATA.workModes?.length ? (
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
+                {RESUME_DATA.workModes.map((mode) => {
+                  const Icon = getWorkModeIcon(mode)
+                  return (
+                    <Badge key={mode} variant="secondary" className="gap-1">
+                      <Icon className="h-3.5 w-3.5" />
+                      {getWorkModeLabel(mode)}
+                    </Badge>
+                  )
+                })}
+              </div>
+            ) : null}
           </div>
         </div>
 

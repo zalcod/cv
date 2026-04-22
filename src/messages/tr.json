@@ -16,6 +16,7 @@
         "workExperience": "İş Deneyimi",
         "education": "Eğitim",
         "projects": "Projeler",
+        "certifications": "Sertifikalar",
         "skills": "Yetenekler",
         "extracurricular": "Gönüllü Aktiviteler",
         "languages": "Diller",
@@ -55,5 +56,10 @@
     "footer": {
         "allRightsReserved": "Tüm hakları saklıdır",
         "secure": "Güvenli"
+    },
+    "workModes": {
+        "onSite": "Yerinde",
+        "hybrid": "Hibrit",
+        "remote": "Uzaktan"
     }
 }

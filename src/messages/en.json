@@ -16,6 +16,7 @@
         "workExperience": "Work Experience",
         "education": "Education",
         "projects": "Projects",
+        "certifications": "Certifications",
         "skills": "Skills",
         "extracurricular": "Extracurricular Activities",
         "languages": "Languages",
@@ -55,5 +56,10 @@
     "footer": {
         "allRightsReserved": "All rights reserved",
         "secure": "Secure"
+    },
+    "workModes": {
+        "onSite": "On-site",
+        "hybrid": "Hybrid",
+        "remote": "Remote"
     }
 }

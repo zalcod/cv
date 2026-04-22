@@ -16,6 +16,7 @@
         "workExperience": "الخبرة العملية",
         "education": "التعليم",
         "projects": "المشاريع",
+        "certifications": "الشهادات",
         "skills": "المهارات",
         "extracurricular": "الأنشطة اللامنهجية",
         "languages": "اللغات",
@@ -55,5 +56,10 @@
     "footer": {
         "allRightsReserved": "جميع الحقوق محفوظة",
         "secure": "آمن"
+    },
+    "workModes": {
+        "onSite": "في الموقع",
+        "hybrid": "هجين",
+        "remote": "عن بعد"
     }
 }
