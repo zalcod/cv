@@ -61,5 +61,14 @@
         "onSite": "Yerinde",
         "hybrid": "Hibrit",
         "remote": "Uzaktan"
+    },
+    "skillCategories": {
+        "mobile": "Mobil Geliştirme",
+        "web": "Web Geliştirme",
+        "infrastructure": "Altyapı & DevOps",
+        "business": "İş Analizi & Strateji",
+        "tools": "Proje Araçları",
+        "design": "Tasarım & Kalite",
+        "other": "Diğer"
     }
 }

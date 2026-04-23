@@ -61,5 +61,14 @@
         "onSite": "On-site",
         "hybrid": "Hybrid",
         "remote": "Remote"
+    },
+    "skillCategories": {
+        "mobile": "Mobile Development",
+        "web": "Web Development",
+        "infrastructure": "Infrastructure & DevOps",
+        "business": "Business Analysis & Strategy",
+        "tools": "Project Tools",
+        "design": "Design & Quality",
+        "other": "Other"
     }
 }

@@ -12,6 +12,7 @@ import { ArrowRight, Building2, Laptop, MapPin, MailIcon, Users } from "lucide-r
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { Footer } from "@/components/footer";
+import { SkillsWidget } from "@/components/skills-widget";
 
 export default function Home() {
     const t = useTranslations();
@@ -127,6 +128,8 @@ export default function Home() {
                             )}
                         </div>
                     </div>
+
+                    <SkillsWidget skills={resumeData.skills} />
 
                     <Section>
                         <div className="relative mb-6">
