@@ -7,7 +7,7 @@ export function Footer() {
     const t = useTranslations()
 
     return (
-        <footer className="py-2 border-t border-muted print:hidden bg-background/80 dark:bg-black/80 backdrop-blur-md">
+        <footer className="hidden sm:block py-2 border-t border-muted print:hidden bg-background/80 dark:bg-black/80 backdrop-blur-md">
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <div className="text-xs text-muted-foreground">
                     {new Date().getFullYear()} Zal Solmuş. {t('footer.allRightsReserved')}

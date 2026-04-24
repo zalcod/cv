@@ -24,6 +24,8 @@
     },
     "common": {
         "view": "View",
+        "close": "Close",
+        "open": "Open",
         "present": "Present",
         "location": "Location",
         "email": "Email",
@@ -32,6 +34,7 @@
     },
     "cv": {
         "print": "Print",
+        "view": "View",
         "download": "Download",
         "skills": "Skills",
         "technologies": "Technologies",
@@ -44,6 +47,7 @@
         "noResults": "No results found",
         "actions": "Actions",
         "downloadCV": "Download CV",
+        "viewCV": "View CV",
         "printCV": "Print CV",
         "links": "Links",
         "press": "Press",

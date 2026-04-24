@@ -8,21 +8,22 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { GlobeIcon } from "lucide-react";
 
 export function LanguageSwitcher() {
     const router = useRouter();
     const pathname = usePathname();
 
     const languages = [
-        { code: 'tr', name: 'Türkçe' },
-        { code: 'en', name: 'English' },
-        { code: 'ar', name: 'العربية' }
+        { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+        { code: 'en', name: 'English', flag: '🇬🇧' },
+        { code: 'ar', name: 'العربية', flag: '🇸🇦' }
     ];
+
+    const currentLocale = pathname.split('/')[1];
+    const active = languages.find((l) => l.code === currentLocale) ?? languages[0];
 
     const handleLanguageChange = (localeCode: string) => {
         try {
-            const currentLocale = pathname.split('/')[1];
             // Eğer geçerli bir dil kodu varsa, o dil kodunu yeni dil koduyla değiştir
             if (['tr', 'en', 'ar'].includes(currentLocale)) {
                 const newPath = pathname.replace(`/${currentLocale}`, `/${localeCode}`);
@@ -41,8 +42,13 @@ export function LanguageSwitcher() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="font-bold">
-                    {pathname.split('/')[1]?.toUpperCase() || 'TR'}
+                <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-9 px-2 rounded-md bg-transparent border border-primary/20 hover:border-primary/40"
+                >
+                    <span className="text-base leading-none mr-1">{active.flag}</span>
+                    <span className="text-xs font-medium">{active.code.toUpperCase()}</span>
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -52,7 +58,8 @@ export function LanguageSwitcher() {
                         onClick={() => handleLanguageChange(lang.code)}
                         className="cursor-pointer"
                     >
-                        {lang.name}
+                        <span className="mr-2">{lang.flag}</span>
+                        <span>{lang.name}</span>
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>

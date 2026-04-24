@@ -1,0 +1,25 @@
+---
+skills:
+  - "Flutter"
+  - "Dart"
+  - "PHP"
+  - "JavaScript"
+  - "React"
+  - "HTML & CSS"
+  - "VPS Yönetimi"
+  - "Cloudflare"
+  - "CI/CD"
+  - "Git"
+  - "Versiyon Yönetimi"
+  - "Gereksinim Analizi"
+  - "Süreç Modelleme"
+  - "İş Geliştirme"
+  - "İş Analizi için Yapay Zeka"
+  - "Jira"
+  - "Bitbucket"
+  - "ClickUp"
+  - "No-Code"
+  - "UI/UX"
+  - "Temiz Kod"
+---
+

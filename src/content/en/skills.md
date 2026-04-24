@@ -1,0 +1,27 @@
+---
+skills:
+  - "Flutter"
+  - "Dart"
+  - "PHP"
+  - "JavaScript"
+  - "React"
+  - "HTML & CSS"
+  - "VPS Administration"
+  - "Cloudflare"
+  - "CI/CD"
+  - "Git"
+  - "Version Control"
+  - "Requirements Gathering"
+  - "Process Modeling"
+  - "Business Development"
+  - "AI Integrations"
+  - "No-Code Development Tools"
+  - "UI & UX Development"
+  - "Algorithms"
+  - "Leadership"
+  - "Clean Code"
+  - "Jira"
+  - "Bitbucket"
+  - "ClickUp"
+---
+

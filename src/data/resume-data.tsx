@@ -354,7 +354,7 @@ export const RESUME_DATA_TR: ResumeData = {
   summary:
     "Yaklaşık dört yıllık deneyime sahip, ürün odaklı çalışan bir Yazılım Geliştiriciyim. 2021'den bu yana Flutter ile mobil uygulamalar geliştiriyorum; son dönemde full-stack geliştirme, altyapı yönetimi ve iş analizi alanlarında da uzmanlığımı genişletiyorum. Kariyerimin büyük bölümünü start-up ortamlarında ve ürünü baştan sona geliştiren ekiplerde geçirdim; proje yönetim ekipleriyle paralel çalışarak fikir aşamasından yayına uzanan süreçlerin her katmanında aktif rol aldım. Teknik geliştirme ile iş süreçleri arasında rahatça köprü kurabiliyor; kod yazmak, iş akışlarını modellemek ve ihtiyaçları belirleyip dönüştürmek arasında akıcı biçimde geçiş yapıyorum.",
   homeSummary:
-    "Yaklaşık 4 yıllık deneyime sahip Yazılım Geliştirici & İş Analisti. Mobil, SaaS, full-stack ve altyapı alanlarında çalışıyorum.",
+    "Yaklaşık 4 yıllık deneyime sahip Yazılım Geliştirici & İş Analisti.\nMobil, SaaS, full-stack ve altyapı alanlarında çalışıyorum.",
   avatarUrl: "https://avatars.githubusercontent.com/u/72752991?s=400&u=13788f78610ac957e9ab779ebc20815f0e4713f3&v=4",
   personalWebsiteUrl: "https://zalsolmus.com",
   contact: {

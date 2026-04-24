@@ -17,21 +17,22 @@ import {
     CommandList,
     CommandSeparator,
 } from "@/components/ui/command";
-import { Download, FileText, Link as LinkIcon, Command as CommandIcon } from "lucide-react";
-import { ResumeData } from "@/data/resume-data";
+import { Download, FileText, Link as LinkIcon, Search, Home } from "lucide-react";
+import { RESUME_DATA_AR, RESUME_DATA_EN, RESUME_DATA_TR } from "@/data/resume-data";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 
-interface CommandMenuProps {
-    resumeData: ResumeData;
-}
-
-export function CommandMenu({ resumeData }: CommandMenuProps) {
+export function CommandMenu({ showDesktopTrigger = true }: { showDesktopTrigger?: boolean } = {}) {
     const t = useTranslations();
+    const router = useRouter();
+    const { locale } = useParams();
     const [html2pdf, setHtml2pdf] = useState<any>(null);
     const [open, setOpen] = useState(false);
     const [isMac, setIsMac] = useState(typeof window !== 'undefined' ? navigator.userAgent.indexOf('Mac') !== -1 : false);
     const [isMobile, setIsMobile] = useState(false);
+    const resumeData =
+        locale === "en" ? RESUME_DATA_EN : locale === "ar" ? RESUME_DATA_AR : RESUME_DATA_TR;
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -97,16 +98,26 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
         }
     };
 
+    const goTo = (path: string) => {
+        setOpen(false);
+        router.push(path);
+    };
+
     return (
         <>
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                     <Button
+                        id="command-menu-trigger"
                         variant="outline"
                         size="icon"
-                        className="hidden md:flex transition-all bg-gradient-to-br from-primary/10 via-blue-400/10 to-teal-400/10 hover:from-primary/20 hover:via-blue-400/20 hover:to-teal-400/20"
+                        className={
+                            showDesktopTrigger
+                                ? "sr-only md:not-sr-only md:flex h-9 w-9 bg-transparent border border-primary/20 hover:border-primary/40 hover:bg-muted/40"
+                                : "sr-only h-9 w-9"
+                        }
                     >
-                        <CommandIcon className="h-5 w-5" />
+                        <Search className="h-5 w-5" />
                         <span className="sr-only">{t('commands.title')}</span>
                     </Button>
                 </DialogTrigger>
@@ -119,6 +130,14 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
                         <CommandList>
                             <CommandEmpty>{t('commands.noResults')}</CommandEmpty>
                             <CommandGroup heading={t('commands.actions')}>
+                                <CommandItem onSelect={() => goTo(`/${typeof locale === "string" ? locale : "tr"}`)}>
+                                    <Home className="mr-2 h-4 w-4" />
+                                    <span>Ana Sayfa</span>
+                                </CommandItem>
+                                <CommandItem onSelect={() => goTo(`/${typeof locale === "string" ? locale : "tr"}/cv`)}>
+                                    <FileText className="mr-2 h-4 w-4" />
+                                    <span>CV</span>
+                                </CommandItem>
                                 <CommandItem onSelect={downloadPDF}>
                                     <Download className="mr-2 h-4 w-4" />
                                     <span>{t('commands.downloadCV')}</span>
@@ -155,11 +174,6 @@ export function CommandMenu({ resumeData }: CommandMenuProps) {
                     </Command>
                 </DialogContent>
             </Dialog>
-            {!isMobile && (
-                <div className="fixed bottom-4 right-4 text-sm text-muted-foreground print:hidden">
-                    {t('commands.press')} <kbd className="px-1.5 py-0.5 rounded border bg-muted text-xs font-mono">{isMac ? '⌘' : 'Ctrl'} + J</kbd> {t('commands.toOpen')}
-                </div>
-            )}
         </>
     );
 }

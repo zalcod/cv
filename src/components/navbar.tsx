@@ -7,15 +7,17 @@ import { LanguageSwitcher } from "./LanguageSwitcher"
 import { useTheme } from "next-themes"
 import { RESUME_DATA_EN, RESUME_DATA_TR, RESUME_DATA_AR } from "@/data/resume-data"
 import { useTranslations } from 'next-intl'
+import { CommandMenu } from "@/components/CommandMenu"
+import { Switch } from "@/components/ui/switch"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Menu, Moon, Search, Sun, X } from "lucide-react"
+import { Menu, Moon, Sun, X } from "lucide-react"
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function Navbar() {
     const { theme, setTheme } = useTheme()
@@ -23,6 +25,9 @@ export function Navbar() {
     const pathname = usePathname()
     const t = useTranslations()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => setMounted(true), [])
 
     const getResumeData = () => {
         switch (locale) {
@@ -41,18 +46,10 @@ export function Navbar() {
     const isHomePage = pathname === `/${locale}`
     const isCVPage = pathname === `/${locale}/cv`
 
-    const handleSearchClick = () => {
-        document.getElementById('command-menu-trigger')?.click();
-    }
-
     return (
         <nav className="sticky top-0 z-50 border-b h-16 bg-card/80 backdrop-blur-sm px-4 md:px-6">
-            <div className="mx-auto w-full max-w-2xl flex items-center justify-between h-full">
-                <div className="flex items-center gap-6">
-                    <Link href={`/${locale}`} className="font-semibold text-lg hover:text-primary transition-colors">
-                        {resumeData.name}
-                    </Link>
-                    <div className="hidden sm:flex items-center gap-4">
+            <div className="mx-auto w-full max-w-2xl flex items-center justify-start gap-4 h-full">
+                <div className="hidden sm:flex items-center gap-4">
                         <Link
                             href={`/${locale}`}
                             className={`text-sm font-medium hover:text-primary transition-colors ${isHomePage ? "text-primary" : "text-muted-foreground"}`}
@@ -65,41 +62,29 @@ export function Navbar() {
                         >
                             {t('navigation.cv')}
                         </Link>
-                    </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 ml-2">
+                    <CommandMenu />
+
+                    {/* Theme Switch */}
+                    {mounted ? (
+                        <div className="h-9 w-[60px]">
+                            <Switch
+                                checked={theme === "dark"}
+                                onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+                                aria-label="Tema değiştir"
+                                className="h-9 w-[60px]"
+                            >
+                                {theme === "dark" ? (
+                                    <Moon className="h-3.5 w-3.5 text-background" />
+                                ) : (
+                                    <Sun className="h-3.5 w-3.5 text-background" />
+                                )}
+                            </Switch>
+                        </div>
+                    ) : null}
+
                     <LanguageSwitcher />
-
-                    {/* Search Button (visible only on mobile) */}
-
-
-                    {/* Theme Toggle Button */}
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        className="bg-white dark:bg-background border border-primary/30 hover:border-primary/50"
-                    >
-                        <motion.div
-                            initial={false}
-                            animate={{
-                                rotate: theme === "dark" ? 360 : 0,
-                                scale: [1, 1.2, 1]
-                            }}
-                            transition={{
-                                duration: 0.6,
-                                ease: "easeInOut",
-                                scale: {
-                                    times: [0, 0.5, 1],
-                                    duration: 0.5
-                                }
-                            }}
-                            className="relative"
-                        >
-                            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all absolute inset-0 dark:opacity-0" />
-                            <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all opacity-0 dark:opacity-100" />
-                        </motion.div>
-                    </Button>
 
                     {/* Hamburger Menu Button (visible only on mobile) */}
                     <Button

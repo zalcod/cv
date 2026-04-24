@@ -24,6 +24,8 @@
     },
     "common": {
         "view": "Görüntüle",
+        "close": "Kapat",
+        "open": "Aç",
         "present": "Şu an",
         "location": "Konum",
         "email": "E-posta",
@@ -32,6 +34,7 @@
     },
     "cv": {
         "print": "Yazdır",
+        "view": "Görüntüle",
         "download": "İndir",
         "skills": "Yetenekler",
         "technologies": "Teknolojiler",
@@ -44,6 +47,7 @@
         "noResults": "Sonuç bulunamadı",
         "actions": "İşlemler",
         "downloadCV": "CV'yi İndir",
+        "viewCV": "CV'yi Görüntüle",
         "printCV": "CV'yi Yazdır",
         "links": "Bağlantılar",
         "press": "Komut menüsünü açmak için",

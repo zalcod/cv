@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
-
-const inter = Inter({ subsets: ["latin"] });
+import { VercelAnalytics } from "@/components/VercelAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zalsolmus.com'),
@@ -56,7 +53,6 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       }
     ],
-    apple: "/apple-icon.png",
   },
 };
 
@@ -67,9 +63,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
