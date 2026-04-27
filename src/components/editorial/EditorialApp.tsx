@@ -8,6 +8,7 @@ import { useReveal } from './useReveal';
 import { MobileBottomBar } from './MobileBottomBar';
 import { CVDocument } from './CVDocument';
 import { CVMenu, CVPreviewModal } from './CVActions';
+import { MeetButton } from '@/components/MeetButton';
 import { LinkPreviewModal, type LinkTarget } from './LinkPreviewModal';
 import { GitHubIcon } from '@/components/icons/GitHubIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
@@ -300,6 +301,18 @@ export function EditorialApp({
     setModKey(isMac ? '⌘' : 'Ctrl/⌘');
   }, []);
 
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('cv') === '1') {
+      setPreviewOpen(true);
+      params.delete('cv');
+      const qs = params.toString();
+      const url = window.location.pathname + (qs ? `?${qs}` : '') + window.location.hash;
+      window.history.replaceState(null, '', url);
+    }
+  }, []);
+
   const skillsByCat = React.useMemo(() => {
     const cats: Record<string, string[]> = {
       mobile: [],
@@ -432,6 +445,7 @@ export function EditorialApp({
 
               <div className="cta-row">
                 <CVMenu onView={viewCV} onDownload={downloadCV} />
+                <MeetButton label={t('navigation.bookMeeting')} />
                 <a className="btn ghost" href={`mailto:${resume.contact.email}`} data-hover>
                   {t('navigation.contact')}
                 </a>
@@ -624,6 +638,7 @@ export function EditorialApp({
           home: t('navigation.home'),
           cv: t('navigation.cv'),
           contact: t('navigation.contact'),
+          meeting: t('navigation.meeting'),
           about: t('sections.about'),
           work: t('sections.workExperience'),
           projects: t('sections.projects'),

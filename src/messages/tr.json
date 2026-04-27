@@ -4,7 +4,9 @@
         "cv": "CV",
         "blog": "Blog",
         "contact": "İletişim",
-        "readMore": "Daha Fazla"
+        "readMore": "Daha Fazla",
+        "meeting": "Randevu",
+        "bookMeeting": "Randevu Al"
     },
     "theme": {
         "light": "Açık",

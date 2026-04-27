@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Home, Mail, FileText } from 'lucide-react';
+import { Home, Mail, FileText, CalendarDays } from 'lucide-react';
 
 type Item = {
   key: string;
@@ -13,10 +13,15 @@ type Item = {
   onPress?: () => void;
 };
 
-function scrollToId(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function scrollToId(id: string, fallbackHref?: string) {
+  const el = typeof document !== 'undefined' ? document.getElementById(id) : null;
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  if (fallbackHref && typeof window !== 'undefined') {
+    window.location.href = fallbackHref;
+  }
 }
 
 export function MobileBottomBar({
@@ -29,6 +34,7 @@ export function MobileBottomBar({
     home: string;
     cv: string;
     contact: string;
+    meeting?: string;
     about?: string;
     work?: string;
     projects?: string;
@@ -38,6 +44,7 @@ export function MobileBottomBar({
   const items: Item[] = [
     { key: 'home', label: labels.home, kind: 'scroll', targetId: 'home' },
     { key: 'cv', label: labels.cv, kind: 'action', onPress: onCvAction ?? (() => window.print()) },
+    { key: 'meeting', label: labels.meeting ?? 'Randevu', kind: 'link', href: `/${locale}/randevu` },
     { key: 'contact', label: labels.contact, kind: 'scroll', targetId: 'contact' },
   ];
 
@@ -59,7 +66,9 @@ export function MobileBottomBar({
             className="mbar-item"
             type="button"
             onClick={() => {
-              if (it.kind === 'scroll' && it.targetId) scrollToId(it.targetId);
+              if (it.kind === 'scroll' && it.targetId) {
+                scrollToId(it.targetId, `/${locale}#${it.targetId}`);
+              }
               if (it.kind === 'action') it.onPress?.();
             }}
             data-hover
@@ -81,6 +90,8 @@ function iconFor(key: string) {
       return <Mail className="mbar-svg" />;
     case 'cv':
       return <FileText className="mbar-svg" />;
+    case 'meeting':
+      return <CalendarDays className="mbar-svg" />;
     default:
       return null;
   }

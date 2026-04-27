@@ -4,7 +4,9 @@
         "cv": "CV",
         "blog": "Blog",
         "contact": "Contact",
-        "readMore": "Read More"
+        "readMore": "Read More",
+        "meeting": "Meeting",
+        "bookMeeting": "Book a Meeting"
     },
     "theme": {
         "light": "Light",
